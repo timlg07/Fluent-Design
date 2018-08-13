@@ -1,0 +1,1 @@
+https://stackoverflow.com/questions/51712513/scrollbar-not-changing-on-class-change
