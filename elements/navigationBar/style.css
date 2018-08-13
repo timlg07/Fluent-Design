@@ -1,0 +1,374 @@
+:root,html,body{margin:0;}/*remove margin*/
+
+#loading {
+    
+    position: fixed;
+    top   : 0; 
+    bottom: 0;
+    left  : 0;
+    right : 0;
+    z-index  : 200;
+    
+    padding-top: 30vh;
+    
+    background: #888;
+    
+    color: #fff;
+    text-align: center;
+    
+    cursor: wait;
+        
+}
+
+#navigation { /*whole navigation*/
+    
+    position: fixed;
+    top :0;
+    left:0;
+    
+    height: 100vh;
+    
+    opacity: 0.88;
+    background: "rgb( 0,88,166 )";
+    
+    transition: width 0.4s ease-out;
+    
+}
+
+#navigation.hidden { /* normal mode, labels are hidden */
+    
+    
+    transition: width 0.25s ease-in;
+    
+}
+
+#navigation > #nav-symbols { /* symbol-container */
+    
+    position: fixed;
+    top :0;
+    left:0;
+    
+    width : 60px;
+    height: 100%;
+    
+    background: inherit;
+    transition: inherit;
+    
+}
+
+#navigation > #nav-labels { /* label-container */
+    
+    position: fixed;
+    top: 0;
+    left:60px;
+    
+    width: 200px;
+    height: 100%;
+    
+    background: inherit;
+    transition: inherit;
+    
+    overflow: hidden;
+    
+    color: #fff;
+    font-size: 18px;
+    font-family: sans-serif;
+    
+}
+
+#navigation.hidden > #nav-labels { /* normal mode, labels are hidden */
+    width:0;
+}
+
+#navigation > #nav-labels > .nav-label { /* labels */
+    
+    width : 94.0% ;
+    height: 56.8px;
+    
+    padding-top   : 0.8px;
+    padding-bottom: 0.8px;
+    padding-left  :   6% ;
+    
+    line-height: 54px;
+}
+
+/* paddings like symbols -> same position */
+#navigation > #nav-labels > .nav-label:first-child { /* first label */
+    padding-top: 1.6px;
+}
+#navigation > #nav-labels > .nav-label:last-child { /* last label */
+    padding-bottom: 1.6px;
+}
+
+#navigation > #nav-labels > .nav-label:hover { /* hovered label */
+    cursor: pointer;
+}
+
+
+#navigation > #nav-active-element-view { /* visualization of the active nav-element */
+    
+    position: fixed ;
+    left    : 00.0px; 
+    z-index : 100000;
+    
+    width   : 05.0px;
+    
+    background-color: #fe4133;
+    transition      : top 0.2s linear;
+    
+}
+
+
+/*======== REVEAL EFFECT ==========*/
+
+.reveal { /* symbol-border */
+  
+    width : 56.8px;
+    height: 56.8px;
+    
+    padding-top   : 0.8px; /*  because the borders of 2 */
+    padding-bottom: 0.8px; /*  elements add up to 1.6px */
+    padding-left  : 1.6px;
+    padding-right : 1.6px;
+    
+    opacity: 1;
+    
+    text-align: center;
+    
+}
+
+.reveal:first-child { /* first symbol-border */
+  padding-top: 1.6px;
+}
+.reveal:last-child { /* last symbol-border */
+  padding-bottom: 1.6px;
+}
+
+
+.symbol-wrapper { /* symbol-wrapper */
+    
+    width : 100%;
+    height: 100%;
+    
+    opacity: 0.88;
+    
+    text-align: center;
+    
+}
+
+.symbol-wrapper:hover { /* hovered symbol-wrapper */
+  cursor: pointer;
+}
+
+.symbol-wrapper > img { /* symbol */
+    
+    width  :  60% ;
+    height :  60% ;
+    
+    margin :  20% ;
+    
+}
+
+/*  end  of reveal effect */
+
+
+
+#background { /* background-image for whole page */
+    
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    
+    background:url(bg.jpg);
+    background-size: cover;
+    
+}
+
+#content { /* content-container */
+    
+    /* width: gets set by js */
+    
+    background: transparent;
+    
+}
+
+#content > .section { /* the content-sections */
+    
+    position: fixed;
+    top: 0;
+    
+    /* gets set by js */
+    
+    margin: 0;
+    
+    overflow-y: auto;
+    transition: top 0.4s ease-out; /* change effect */
+    
+    color: aliceblue;
+    font-family: Arial;
+    
+}
+/*======== SCROLLBAR ===============*/
+#content > .section::-webkit-scrollbar {
+    background: transparent;
+    width: 16px;
+}
+#content > .section::-webkit-scrollbar-track {
+    /* possible gradient: http://colorzilla.com/gradient-editor/#7a7a7a+0,7a7a7a+100&0+50,1+51,1+95,1+96,0+96 */
+    background: transparent;
+}
+#content > .section::-webkit-scrollbar-track:hover {
+    background: rgba(255,255,255,0.3);
+}
+#content > .section::-webkit-scrollbar-thumb {
+    border-radius: 2%;
+    background: rgba(255,255,255,0.55);
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#bcbcbc+0,bcbcbc+100&0+50,1+51,1+95,1+96,0+96 */
+    background: -moz-linear-gradient(left, rgba(188,188,188,0) 0%, rgba(188,188,188,0) 50%, rgba(188,188,188,1) 51%, rgba(188,188,188,1) 95%, rgba(188,188,188,0) 96%, rgba(188,188,188,0) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(left, rgba(188,188,188,0) 0%,rgba(188,188,188,0) 50%,rgba(188,188,188,1) 51%,rgba(188,188,188,1) 95%,rgba(188,188,188,0) 96%,rgba(188,188,188,0) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to right, rgba(188,188,188,0) 0%,rgba(188,188,188,0) 50%,rgba(188,188,188,1) 51%,rgba(188,188,188,1) 95%,rgba(188,188,188,0) 96%,rgba(188,188,188,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00bcbcbc', endColorstr='#00bcbcbc',GradientType=1 ); /* IE6-9*/
+}
+#content > .section::-webkit-scrollbar-thumb:hover {
+    background: rgba(255,255,255,0.75);
+    
+       -moz-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+            box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+}
+/*==== end of scrollar ====*/
+
+#content > .section.inactive { /* the inactive content-sections */
+    top: 100vh;
+}
+
+
+/*======== other elements ==========*/
+
+/*BUTTON element={button} class={default}*/
+button.default {
+    
+    display: block;
+    
+    padding: 5px 24px;
+    border: 2px solid transparent;
+    margin: 1em 0px;
+    
+    background-color: #9f9f9f;
+    
+    user-select: none;
+    
+    font-family: inherit;
+    font-size: 18px;
+    letter-spacing: -1px;
+    
+}
+
+button.default:focus {
+    outline: none;
+}
+
+button.default:hover {
+    border: 2px solid #515151;
+}
+
+button.default:active {
+    background-color: #515151;
+}
+
+/*TITLE element={div} class={title}*/
+div.title {
+    
+    margin-bottom: 40px;
+    
+    color: #fff;
+    font-size: 18px;
+    font-family: sans-serif;
+    
+}
+
+
+
+/*======== Layout ==========*/
+
+.cardboard { /* the layout-container of the cards */
+    
+    width: 100%;
+    
+    display: grid;
+    grid-gap: 45px;
+    grid-template-columns: repeat( auto-fill,300px );
+    
+}
+
+.cardboard > .card { /* a single card */
+    
+    position: relative;
+    
+    box-sizing: border-box;
+    
+    background-color: #888;
+    opacity: 0.9;
+    
+}
+
+.cardboard > .card::before { /* required for making the cards squares */
+    
+    content: '';
+    display: block;
+    padding-top: 100%;
+    
+}
+
+
+.cardboard > .card > .border { /* the border of the cards */
+    
+    position: absolute;
+    top :  0; 
+    left:  0;
+    
+    width : calc( 100% - 4.8px );
+    height: calc( 100% - 4.8px );
+    
+    padding: 2.4px;
+    
+    background: "#333";
+    box-shadow: 0 0 16px 4px rgba(0,0,0,.2);
+    
+}
+
+.cardboard > .card > .border:hover { /* the border while hovered */
+    
+    position : absolute;
+    top :-6px;
+    left:-6px;
+    
+    width : calc( 100% - 4.8px + 12px );
+    height: calc( 100% - 4.8px + 12px );
+    
+    box-shadow: 
+        0 0 12px 6px rgba(0,0,0,.2), 
+        0 0 26px 8px rgba(0,0,0,.5);
+    
+}
+
+.cardboard > .card > .border > .content { /* the content in the cards */
+    
+    width : calc( 100% - 20px );
+    height: calc( 100% - 20px );
+  
+    padding: 10px;
+    
+    background-color: #888;
+    
+}
+
+.cardboard > .card > .border > .content:hover { /* the content in the cards while hovered */
+    box-shadow: inset 0 0 150px 50px rgba(255,255,255,0.2);
+}
+
+
+
+
+
+
