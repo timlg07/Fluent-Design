@@ -335,6 +335,8 @@ div.title {
     background: "#333";
     box-shadow: 0 0 16px 4px rgba(0,0,0,.2);
     
+    transition: 0.36s ease-in;
+    
 }
 
 .cardboard > .card > .border:hover { /* the border while hovered */
@@ -349,6 +351,8 @@ div.title {
     box-shadow: 
         0 0 12px 6px rgba(0,0,0,.2), 
         0 0 26px 8px rgba(0,0,0,.5);
+    
+    transition: 0.48s ease-out;
     
 }
 
