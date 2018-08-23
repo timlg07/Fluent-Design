@@ -111,6 +111,14 @@ function getNavBackground( ){
 // @method update method for the UI
 function update( ){
     setContentBounding();
+    
+    let cardboard = document.querySelector( ".cardboard" );
+    let gap   =  45;
+    let width = 300;
+    let space = (cardboard.offsetWidth+gap) % (width+gap);
+    if( cardboard.offsetWidth < width ) space = 0;
+    if( getNavigationState().isHidden && space > 200 ) toggleNavigationBar();
+    
 }
 
 
