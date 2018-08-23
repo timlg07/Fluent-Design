@@ -114,7 +114,9 @@
     width   : 05.0px;
     
     background-color: #fe4133;
-    transition      : top 0.2s linear;
+    transition      : 
+        top     0.2s  linear ,
+        height  0.2s  linear ;
     
 }
 

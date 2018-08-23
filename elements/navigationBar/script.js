@@ -186,8 +186,10 @@ function updateActiveNavElemView( index ){
     let defaultOffset = 0.8/*px (first-child-padding/fluentBorder)*/;
     // the width of all elements on top of the active one
     let currentOffset = ( index*symbolHeight ) + defaultOffset;
-    // how many percent of the symbol-container.width the activeView should fill 
+    // how many percent of the symbol-container.height the activeView should fill 
     let sizePercentage= 66.66/* % */;
+    // bigger size if the active element is hovered
+    if( getHoveredElemIndex() === index ) sizePercentage = 87;
     // the new top y-coordinate of the nav-active-element-view
     let top = currentOffset + ( symbolHeight * (100-sizePercentage)/200/*(upper space = height * spacePercent/100 /2)*/ );
     // update nav-active-element-view.top
@@ -196,6 +198,28 @@ function updateActiveNavElemView( index ){
     activeView.style.height = ( symbolHeight * sizePercentage/100 )+"px";
     
 }
+
+// @return {Number} index of the currently hovered symbol
+function getHoveredElemIndex( ){
+    
+    let hov_symbl = document.querySelector( ".symbol-wrapper:hover" );
+    let hov_label = document.querySelector( "#navigation > #nav-labels > .nav-label:hover" );
+    
+    for( let i=0; i<$navElements.symbols.length; i++ ){
+        if
+        ( 
+            $navElements.symbols.item( i ) === hov_symbl ||
+            $navElements.labels .item( i ) === hov_label
+        )
+        {
+            return i;
+        } 
+    }
+    
+    return NaN;
+    
+}
+
 
 /*
 // @method hides nav-labels on a click anywhere
@@ -217,6 +241,9 @@ function removeOnClick( evt ){
 /*REVEAL*/  var $navElements = {}
 /*REVEAL*/  
 /*REVEAL*/  function onMouseMove( e ){
+/*REVEAL*/      
+/*REVEAL*/      // update height if hovered
+/*REVEAL*/      updateActiveNavElemView( $activeSection );
 /*REVEAL*/      
 /*REVEAL*/      // CONTENT //
 /*REVEAL*/      
