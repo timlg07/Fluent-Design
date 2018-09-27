@@ -129,9 +129,6 @@ function update( ){
 //=========// MAIN //=========//
 window.onload =()=> {
     
-    // hide loading-screen
-    document.querySelector( "#loading" ).style.display = "none";
-    
     // save link to navigationelements
     $navElements = {
         symbols : document.querySelectorAll( ".symbol-wrapper" ),
@@ -144,7 +141,8 @@ window.onload =()=> {
     setNavBackground();
     
     // init listener //
-    document.addEventListener( "mousemove",onMouseMove );
+    document.addEventListener( "mousemove", onMouseMove );
+    document.querySelectorAll( "#content > div.section" ).forEach(o=>o.addEventListener( "DOMMouseScroll", onMouseMove ));
     
     for( let i=0; i<$navElements.symbols.length; i++ ){
         $navElements.symbols.item( i ).addEventListener( "click",handleClicks.bind( $navElements.symbols.item( i ),i ));
@@ -253,7 +251,7 @@ function removeOnClick( evt ){
 /*REVEAL*/  var $navElements = {}
 /*REVEAL*/  
 /*REVEAL*/  function onMouseMove( e ){
-/*REVEAL*/      
+/*REVEAL*/
 /*REVEAL*/      // update height if hovered
 /*REVEAL*/      updateActiveNavElemView( $activeSection );
 /*REVEAL*/      
@@ -270,10 +268,27 @@ function removeOnClick( evt ){
 /*REVEAL*/                        ( e.pageY - cards.item( i ).getBoundingClientRect().top  );
 /*REVEAL*/              cards.item( i ).style.background = 
 /*REVEAL*/                  "-webkit-gradient(radial, "+pos+", 0, "+pos+", "+$fluentRevealEffect.gradientSize*2+
-/*REVEAL*/                  ", from(#DDD), to(rgba(0,0,0,0.0))), #333"
+/*REVEAL*/                  ", from(#dfdfdf), to(transparent))"
 /*REVEAL*/              ;
 /*REVEAL*/          } else { // if the card is hovered
-/*REVEAL*/              hover_card.style.background = "#EFEFEF";
+/*REVEAL*/              hover_card.style.background = "#FEFEFE";
+/*REVEAL*/          }
+/*REVEAL*/      }
+/*REVEAL*/
+/*REVEAL*/      // the overlays of all cards
+/*REVEAL*/      let overlays = document.querySelectorAll( ".cardboard > .card > .border > .content > .overlay" );
+/*REVEAL*/      // the overlay of the currently hovered card
+/*REVEAL*/      let hovered_overlay = document.querySelector(".cardboard > .card > .border > .content > .overlay:hover");
+/*REVEAL*/      for( let i=0; i<overlays.length; i++ ){
+/*REVEAL*/          if( overlays.item( i ) == hovered_overlay ){ // if the card is hovered
+/*REVEAL*/              let pos = ( e.pageX - hovered_overlay.getBoundingClientRect().left )+ " " +
+/*REVEAL*/                        ( e.pageY - hovered_overlay.getBoundingClientRect().top  );
+/*REVEAL*/              hovered_overlay.style.background = 
+/*REVEAL*/                  "-webkit-gradient(radial, "+pos+", 0, "+pos+", "+$fluentRevealEffect.gradientSize*3+
+/*REVEAL*/                  ", from(rgba(255,255,255,.35)), to(rgba(250,250,250,.001))"
+/*REVEAL*/              ;
+/*REVEAL*/          } else { // if the card is not hovered
+/*REVEAL*/              overlays.item( i ).style.background = "rgba(0,0,0,.1)"
 /*REVEAL*/          }
 /*REVEAL*/      }
 /*REVEAL*/      
@@ -299,15 +314,15 @@ function removeOnClick( evt ){
 /*REVEAL*/              let pos = ( e.pageX - rev.item( i ).getBoundingClientRect().left )+ " " +
 /*REVEAL*/                        ( e.pageY - rev.item( i ).getBoundingClientRect().top  );
 /*REVEAL*/              let gradient =
-/*REVEAL*/                  "-webkit-gradient(radial, "+pos+", 0, "+pos+", "+$fluentRevealEffect.gradientSize+
-/*REVEAL*/                  ", from("+$fluentRevealEffect.lightColor+"), to(rgba(255,255,255,0.0))), "+getNavBackground()
+/*REVEAL*/                  "-webkit-gradient(radial, "+pos+", 0, "+pos+", "+$fluentRevealEffect.gradientSize*1.1+
+/*REVEAL*/                  ", from(rgba(255,255,255,.7)), to(transparent))"
 /*REVEAL*/              ;
 /*REVEAL*/              rev.item( i ).style.background = gradient;
 /*REVEAL*/          }
 /*REVEAL*/          // hover effect for hovered symbol
 /*REVEAL*/          let hov = document.querySelector( ".symbol-wrapper:hover" )
 /*REVEAL*/          if( hov ){
-/*REVEAL*/              hov.style.background = "rgba(100,100,180,.55)";
+/*REVEAL*/              hov.style.background = rgb2rgba( getNavBackground(),.5 );
 /*REVEAL*/          }
 /*REVEAL*/      
 /*REVEAL*/      // CASE#2: nav-labels are shown
@@ -376,3 +391,32 @@ function removeOnClick( evt ){
 /*REVEAL*/          }
 /*REVEAL*/      }
 /*REVEAL*/  }
+
+
+
+// ======= // COLOR // ========== //
+
+// @param  {String} the color as rgb-string
+//         {Number} the alpha-value [0;1]
+// @return {String} rgba(...) string
+function rgb2rgba( rgb,a ){
+    return "rgba("+rgb2array( rgb ).concat(a).join(", ")+")";
+}
+
+// @param  {String} the color as rgb-string
+// @return {Array}  the color values 
+function rgb2array( rgb ){
+    return rgb.match(/\d+/g);
+}
+
+
+
+
+
+
+
+
+
+
+
+

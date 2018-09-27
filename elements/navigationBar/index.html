@@ -7,7 +7,39 @@
     
     <body>
         
-        <div id="loading"> LOADING... </div>
+        <div id="loading"> 
+            Lade Hintergrund
+            <div class="progressbar-wrapper">
+                <div class="progressbar">
+                    <div class="side front">
+                        <div class="bar"></div>
+                    </div>
+                    <div class="side back">
+                        <div class="bar"></div>
+                    </div>
+                    <div class="side top">
+                        <div class="bar"></div>
+                    </div>
+                    <div class="side bottom">
+                        <div class="bar"></div>
+                    </div>
+                    <div class="side left"></div>
+                </div>
+           </div> 
+            
+            <script>
+                
+                // @method change the progress of the progressbar
+                // @param  {Number} percentage
+                function setProgress( percentage ){
+                    document.querySelectorAll( "div.progressbar-wrapper > div.progressbar > div.side > div.bar" ).forEach( bar => bar.style.width = percentage+"%" );
+                }
+
+            </script>
+            
+            <script src="load.js">  </script>
+            
+        </div>
         
         <div id="navigation" class="hidden">
             <div id="nav-active-element-view"></div>
@@ -61,6 +93,7 @@
                     <div class="card">
                         <div class="border">
                             <div class="content">
+                                <div class="overlay"></div>
                                 
                             </div>
                         </div>
@@ -68,6 +101,7 @@
                     <div class="card">
                         <div class="border">
                             <div class="content">
+                                <div class="overlay"></div>
                                 
                             </div>
                         </div>
@@ -75,6 +109,7 @@
                     <div class="card">
                         <div class="border">
                             <div class="content">
+                                <div class="overlay"></div>
                                 
                             </div>
                         </div>
@@ -82,6 +117,7 @@
                     <div class="card">
                         <div class="border">
                             <div class="content">
+                                <div class="overlay"></div>
                                 
                             </div>
                         </div>
@@ -89,6 +125,7 @@
                     <div class="card">
                         <div class="border">
                             <div class="content">
+                                <div class="overlay"></div>
                                 
                             </div>
                         </div>
@@ -96,6 +133,7 @@
                     <div class="card">
                         <div class="border">
                             <div class="content">
+                                <div class="overlay"></div>
                                 
                             </div>
                         </div>
@@ -103,6 +141,7 @@
                     <div class="card">
                         <div class="border">
                             <div class="content">
+                                <div class="overlay"></div>
                                 
                             </div>
                         </div>
@@ -110,6 +149,7 @@
                     <div class="card">
                         <div class="border">
                             <div class="content">
+                                <div class="overlay"></div>
                                 
                             </div>
                         </div>
@@ -117,6 +157,7 @@
                     <div class="card">
                         <div class="border">
                             <div class="content">
+                                <div class="overlay"></div>
                                 
                             </div>
                         </div>
@@ -135,6 +176,7 @@
                     <div class="card">
                         <div class="border">
                             <div class="content">
+                                <div class="overlay"></div>
                                 
                             </div>
                         </div>
@@ -142,6 +184,7 @@
                     <div class="card">
                         <div class="border">
                             <div class="content">
+                                <div class="overlay"></div>
                                 
                             </div>
                         </div>
@@ -149,6 +192,7 @@
                     <div class="card">
                         <div class="border">
                             <div class="content">
+                                <div class="overlay"></div>
                                 
                             </div>
                         </div>
@@ -156,6 +200,7 @@
                     <div class="card">
                         <div class="border">
                             <div class="content">
+                                <div class="overlay"></div>
                                 
                             </div>
                         </div>
@@ -163,6 +208,7 @@
                     <div class="card">
                         <div class="border">
                             <div class="content">
+                                <div class="overlay"></div>
                                 
                             </div>
                         </div>
@@ -170,6 +216,7 @@
                     <div class="card">
                         <div class="border">
                             <div class="content">
+                                <div class="overlay"></div>
                                 
                             </div>
                         </div>
@@ -177,6 +224,7 @@
                     <div class="card">
                         <div class="border">
                             <div class="content">
+                                <div class="overlay"></div>
                                 
                             </div>
                         </div>
@@ -184,6 +232,7 @@
                     <div class="card">
                         <div class="border">
                             <div class="content">
+                                <div class="overlay"></div>
                                 
                             </div>
                         </div>
@@ -191,6 +240,7 @@
                     <div class="card">
                         <div class="border">
                             <div class="content">
+                                <div class="overlay"></div>
                                 
                             </div>
                         </div>
@@ -198,6 +248,7 @@
                     <div class="card">
                         <div class="border">
                             <div class="content">
+                                <div class="overlay"></div>
                                 
                             </div>
                         </div>
@@ -205,6 +256,7 @@
                     <div class="card">
                         <div class="border">
                             <div class="content">
+                                <div class="overlay"></div>
                                 
                             </div>
                         </div>
@@ -223,6 +275,7 @@
                     <div class="card">
                         <div class="border">
                             <div class="content">
+                                <div class="overlay"></div>
                                 
                             </div>
                         </div>
@@ -230,6 +283,7 @@
                     <div class="card">
                         <div class="border">
                             <div class="content">
+                                <div class="overlay"></div>
                                 
                             </div>
                         </div>
@@ -237,6 +291,7 @@
                     <div class="card">
                         <div class="border">
                             <div class="content">
+                                <div class="overlay"></div>
                                 
                             </div>
                         </div>
@@ -244,6 +299,7 @@
                     <div class="card">
                         <div class="border">
                             <div class="content">
+                                <div class="overlay"></div>
                                 
                             </div>
                         </div>
@@ -262,6 +318,7 @@
                     <div class="card">
                         <div class="border">
                             <div class="content">
+                                <div class="overlay"></div>
                                 
                             </div>
                         </div>
@@ -269,6 +326,7 @@
                     <div class="card">
                         <div class="border">
                             <div class="content">
+                                <div class="overlay"></div>
                                 
                             </div>
                         </div>
@@ -276,6 +334,7 @@
                     <div class="card">
                         <div class="border">
                             <div class="content">
+                                <div class="overlay"></div>
                                 
                             </div>
                         </div>
@@ -283,6 +342,7 @@
                     <div class="card">
                         <div class="border">
                             <div class="content">
+                                <div class="overlay"></div>
                                 
                             </div>
                         </div>
@@ -290,6 +350,7 @@
                     <div class="card">
                         <div class="border">
                             <div class="content">
+                                <div class="overlay"></div>
                                 
                             </div>
                         </div>
