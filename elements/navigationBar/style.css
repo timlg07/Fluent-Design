@@ -1,7 +1,6 @@
 :root,html,body{margin:0;overflow:none;}/*remove margin and overflow*/
 
 
-
 /*==============/ LOADING /===============*/
 
 #loading {
@@ -213,7 +212,7 @@
 }
 
 .symbol-wrapper:hover { /* hovered symbol-wrapper */
-  cursor: pointer;
+    cursor: pointer;
 }
 
 .symbol-wrapper > img { /* symbol */
@@ -245,6 +244,7 @@
     /* width: gets set by js */
     
     background: transparent;
+    cursor:url(cursor2.cur), auto;
     
 }
 
