@@ -159,12 +159,26 @@ window.onload =()=> {
     
     // making best state and keep it updated on resize
     makeBestNavigationBarState();
-    window.addEventListener( "resize",makeBestNavigationBarState);
+    window.addEventListener( "resize",resize );
     
 }
 
 
-function makeBestNavigationBarState( ){
+var $resizingCounter = 0;
+
+function resize( ){
+    $resizingCounter++;
+    // change the navigationState if not resized for 200 ms
+    setTimeout( makeBestNavigationBarState.bind( this,$resizingCounter ),200 );
+}
+
+
+function makeBestNavigationBarState( count=0 ){
+    
+    // if the counter has changed in the last 200 ms, return
+    if( $resizingCounter !== count ) return;
+    // reset the counter
+    $resizingCounter = 0;
     
     // defining variables for second descision //
     let cardboard = document.querySelector( ".cardboard" );
@@ -175,7 +189,7 @@ function makeBestNavigationBarState( ){
     
     if(
         // first decision, based on total width
-        innerWidth > 1200  || 
+        innerWidth > 1800  || 
         // second decision, based on the space left
         space      >  200
     ){
