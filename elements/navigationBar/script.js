@@ -173,15 +173,19 @@ function makeBestNavigationBarState( ){
     let space = (cardboard.offsetWidth+gap) % (width+gap);
     if( cardboard.offsetWidth < width ) space = 0;
     
-    if((
+    if(
         // first decision, based on total width
         innerWidth > 1200  || 
         // second decision, based on the space left
-        space      >  200 )&&
-        // check if not already shown
-        getNavigationState().isHidden 
-    ){  // change the state
-        toggleNavigationBar();
+        space      >  200
+    ){
+        if( getNavigationState().isHidden  ){
+            toggleNavigationBar();
+        }
+    } else {
+        if( getNavigationState().isVisible ){
+            toggleNavigationBar();
+        }
     }
     
 }
