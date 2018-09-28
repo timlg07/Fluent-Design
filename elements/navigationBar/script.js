@@ -158,7 +158,7 @@ window.onload =()=> {
     updateActiveNavElemView( 0 );
     
     // making best state and keep it updated on resize
-    makeBestNavigationBarState();
+    setTimeout( makeBestNavigationBarState,9 );
     window.addEventListener( "resize",resize );
     
 }
@@ -186,8 +186,8 @@ function makeBestNavigationBarState( count=0 ){
     let width = 300; // the width of one card
     let space = (cardboard.offsetWidth+gap) % (width+gap); // calculate remaining space of the cardboard
     if( getNavigationState().isVisible ) space += 200; // add the navigationBar to the avaible space
-    if( cardboard.offsetWidth <= width ) space  =   0; // don't show labels if the width of the cardboard is smaller or equal to the size of a single card
-    console.log(space)
+    if( cardboard.offsetWidth < width ) space  =   0; // don't show labels if the width of the cardboard is smaller or equal to the size of a single card
+    
     if(
         // first decision, based on total width
         innerWidth > 1800  ||(
