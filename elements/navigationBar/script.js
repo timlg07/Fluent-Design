@@ -182,16 +182,18 @@ function makeBestNavigationBarState( count=0 ){
     
     // defining variables for second descision //
     let cardboard = document.querySelector( ".cardboard" );
-    let gap   =  45;
-    let width = 300;
-    let space = (cardboard.offsetWidth+gap) % (width+gap);
-    if( cardboard.offsetWidth < width ) space = 0;
+    let gap   =  45; // the gab between the cards
+    let width = 300; // the width of one card
+    let space = (cardboard.offsetWidth+gap) % (width+gap); // calculate remaining space of the cardboard
+    if( getNavigationState().isVisible ) space += 200; // add the navigationBar to the avaible space
+    if( cardboard.offsetWidth <= width ) space  =   0; // don't show labels if the width of the cardboard is smaller or equal to the size of a single card
     
     if(
         // first decision, based on total width
-        innerWidth > 1800  || 
+        innerWidth > 1800  ||(
         // second decision, based on the space left
-        space      >  200
+        space      >  200  && 
+        space      <  width ) // then there would be enough space for another card
     ){
         if( getNavigationState().isHidden  ){
             toggleNavigationBar();
