@@ -123,6 +123,11 @@ function update( ){
     if( getNavigationState().isHidden && space > 200 ) toggleNavigationBar();
     */
     
+    // or does it look better without automatic expansion?
+    // lets try it depending on the viewport:
+    // but not do this here. the user should decide, I just show him my opinion onload.
+    
+    
 }
 
 
@@ -152,7 +157,12 @@ window.onload =()=> {
     // position activeElementView
     updateActiveNavElemView( 0 );
     
+    
+    if( innerWidth > 1200 && getNavigationState().isHidden ) toggleNavigationBar();
+    window.addEventListener( "resize",()=>{if( innerWidth > 1200 && getNavigationState().isHidden ) toggleNavigationBar();console.log(innerWidth)});
+    
 }
+
 
 
 var $activeSection = 0;
