@@ -157,12 +157,34 @@ window.onload =()=> {
     // position activeElementView
     updateActiveNavElemView( 0 );
     
-    
-    if( innerWidth > 1200 && getNavigationState().isHidden ) toggleNavigationBar();
-    window.addEventListener( "resize",()=>{if( innerWidth > 1200 && getNavigationState().isHidden ) toggleNavigationBar();console.log(innerWidth)});
+    // making best state and keep it updated on resize
+    makeBestNavigationBarState();
+    window.addEventListener( "resize",makeBestNavigationBarState);
     
 }
 
+
+function makeBestNavigationBarState( ){
+    
+    // defining variables for second descision //
+    let cardboard = document.querySelector( ".cardboard" );
+    let gap   =  45;
+    let width = 300;
+    let space = (cardboard.offsetWidth+gap) % (width+gap);
+    if( cardboard.offsetWidth < width ) space = 0;
+    
+    if((
+        // first decision, based on total width
+        innerWidth > 1200  || 
+        // second decision, based on the space left
+        space      >  200 )&&
+        // check if not already shown
+        getNavigationState().isHidden 
+    ){  // change the state
+        toggleNavigationBar();
+    }
+    
+}
 
 
 var $activeSection = 0;
