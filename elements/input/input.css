@@ -1,0 +1,78 @@
+/* Container */
+div.input{
+    
+    width: 98%;
+    max-width : 220px;
+    
+    margin: 10px;
+    
+    font-family: "Arial";
+    
+}
+
+
+/* Input */
+div.input > input{
+    
+    width : 100%;
+    height: 56px;
+    
+    padding: 14px 16px;
+    
+    border: 1.2px solid rgba(0,0,0,.28);
+    border-radius: 7px;
+    
+    transition: border .2s;
+    font-size: 17px;
+    
+}
+
+div.input > input:hover{
+    border: 1.6px solid rgba(0,0,0,.445);
+}
+
+div.input > input:focus{
+    outline: 0;
+    border: 2.3px solid #0B6;
+}
+
+
+/* Label */
+div.input > label{
+    
+    position: relative;
+    top : calc((( 14px + 1.2px + 27.6px / 2 ) + ( 17px / 2 )) * -1 );
+    left: calc( 16px - 5px / 2 );
+    z-index : 100 ;
+    pointer-events: none;
+    
+    padding: 0 5px 0;
+    
+    /*transition: color .32s;
+    transition: top   .32s;
+    transition: font  .32s;*/
+    transition-duration: .32s;
+    
+    color: rgba(0,0,0,.54);
+    font-size: 17px;
+    
+}
+
+div.input > label:focus { 
+    outline: 0; 
+}
+
+div.input > input:focus ~ label, 
+div.input > input:valid ~ label{
+    top: calc( -56px + 1.2px / 2 - 13px / 2 );
+    font-size: 13px;
+    background: white;
+}
+
+div.input > input:focus ~ label{
+    color: #0B6 !important;
+}
+
+div.input > input:hover ~ label{
+    color: rgba(0,0,0,.76);
+}
