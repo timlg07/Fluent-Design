@@ -1,11 +1,9 @@
 /* Container */
 div.input{
     
-    height:80px;
+    height:56px;
     width :98% ;
     max-width  : 220px;
-    
-    border: 1px solid red;
     
     margin: 10px;
     
@@ -54,8 +52,7 @@ div.input > label{
     overflow   : hidden ;
     white-space: nowrap ;
     
-    border-left : 5px solid white;
-    border-right: 5px solid white;
+    padding-left: 5px;
     
     transition-property: color, top, font;
     transition-duration:  .32s;
@@ -71,9 +68,18 @@ div.input > label:focus {
 
 div.input > input:focus ~ label, 
 div.input > input:valid ~ label{
+    
     top: calc( -56px + 1.2px / 2 - 13px / 2 );
+    
+    padding: 0;
+    
+    border-left : 5px solid transparent;
+    border-right: 5px solid transparent;
+    
     font-size: 13px;
+    
     background: white;
+    
 }
 
 div.input > input:focus ~ label{
