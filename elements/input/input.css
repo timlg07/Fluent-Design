@@ -49,10 +49,10 @@ div.input > label{
     z-index : 100 ;
     pointer-events: none;
     
-    max-width  :  74%  ;
-    display    : block ;
-    overflow   : hidden;
-    white-space: nowrap;
+    max-width  :  74%   ;
+    display:inline-block;
+    overflow   : hidden ;
+    white-space: nowrap ;
     
     border-left : 5px solid white;
     border-right: 5px solid white;
