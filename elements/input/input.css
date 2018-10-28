@@ -54,7 +54,8 @@ div.input > label{
     overflow   : hidden;
     white-space: nowrap;
     
-    padding: 0 5px;
+    border-left : 5px solid white;
+    border-right: 5px solid white;
     
     transition-property: color, top, font;
     transition-duration:  .32s;
