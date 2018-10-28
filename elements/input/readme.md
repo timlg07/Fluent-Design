@@ -11,4 +11,4 @@
     <label>This is an input</label>
 </div>
 ```
-3. You can now adjust width, height, padding, border and margin of the div.input
+3. You can now adjust width, height, padding, border and margin of the input-div.
