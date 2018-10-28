@@ -4,6 +4,8 @@ div.input{
     width: 98%;
     max-width : 220px;
     
+    border: 1px solid red;
+    
     margin: 10px;
     
     font-family: "Arial";
@@ -46,12 +48,10 @@ div.input > label{
     z-index : 100 ;
     pointer-events: none;
     
-    padding: 0 5px 0;
+    padding: 0 5px;
     
-    /*transition: color .32s;
-    transition: top   .32s;
-    transition: font  .32s;*/
-    transition-duration: .32s;
+    transition-property: color, top, font;
+    transition-duration:  .32s;
     
     color: rgba(0,0,0,.54);
     font-size: 17px;
