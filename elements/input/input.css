@@ -1,7 +1,10 @@
+/* Container */
 div.input{
     
+    /* this is needed for label-positioning */
     position: relative;
-  
+    
+    /* this can be adjusted */
     height:56px;
     width :98% ;
     max-width  : 220px;
@@ -10,33 +13,43 @@ div.input{
     
 }
 
-div.input > input{
 
+/* Input */
+div.input > input{
+    
+    /* input fills the whole size of the div */
     width : 100%;
     height: 100%;
     
+    /* space around the text */
     padding: 14px 16px;
     
+    /* border */
     border: 1.2px solid rgba(0,0,0,.28);
     border-radius: 7px;
     transition: border .2s;
     
+    /* font */
     font-size: 17px;
     
 }
 
 div.input > input:hover{
+    /* darker border onHover */
     border: 1.6px solid rgba(0,0,0,.445);
 }
 
 div.input > input:focus{
+    /* colored border onFocus */
     outline: 0;
     border: 2.3px solid #0B6;
 }
 
 
+/* Label */
 div.input > label{
     
+    /* position in the center of the input */
     position: absolute;
     top : 50%;
     transform: translate(0%,-50%);
@@ -44,45 +57,61 @@ div.input > label{
     z-index : 100 ;
     pointer-events: none;
     
+    /* handle labels with much text */
     max-width: calc( 100% - 2 * 16px - 6px ) ;
     display: inline-block;
     overflow: hidden ;
     white-space: nowrap ;
     
+    /* this space gets replaced by border when 
+    /* in focus, but is needed also here so the 
+    /* left-value is correct */
     padding-left: 5px;
     
+    /* smooth transition to the top */
     transition-property: color, top, font;
     transition-duration:  .32s;
     
+    /* white background overlaps the border */
     background: white;
     
+    /* styling the text */
     color: rgba(0,0,0,.54);
     font-size: 17px;
     
 }
 
 div.input > label:focus {
+    /* remove outline */
     outline: 0; 
 }
 
 div.input > input:focus ~ label, 
 div.input > input:valid ~ label{
     
+    /* new position at the top */
     top: calc( 2.3px / 2 );
     transform: translate(0%,-50%);
     
+    /* remove padding and ... */
     padding: 0;
+    
+    /* ... use border instead, since text 
+    /* can't overlap borders, but paddings */
     border-left : 5px solid transparent;
     border-right: 5px solid transparent;
     
+    /* smaller font */
     font-size: 13px;
     
 }
 
 div.input > input:focus ~ label{
+    /* colored text onFocus */
     color: #0B6 !important;
 }
 
 div.input > input:hover ~ label{
+    /* darker text onHover */
     color: rgba(0,0,0,.76);
 }
