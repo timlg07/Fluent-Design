@@ -1,29 +1,26 @@
-/* Container */
 div.input{
     
+    position: relative;
+  
     height:56px;
     width :98% ;
     max-width  : 220px;
-    
-    margin: 10px;
-    
+    margin:10px;
     font-family: "Arial";
     
 }
 
-
-/* Input */
 div.input > input{
-    
+
     width : 100%;
-    height: 56px;
+    height: 100%;
     
     padding: 14px 16px;
     
     border: 1.2px solid rgba(0,0,0,.28);
     border-radius: 7px;
-    
     transition: border .2s;
+    
     font-size: 17px;
     
 }
@@ -38,18 +35,18 @@ div.input > input:focus{
 }
 
 
-/* Label */
 div.input > label{
     
-    position: relative;
-    top : calc((( 14px + 1.2px + 27.6px / 2 ) + ( 17px / 2 )) * -1 );
-    left: calc( 16px - 5px / 2 );
+    position: absolute;
+    top : 50%;
+    transform: translate(0%,-50%);
+    left: calc( 16px - 2.5px );
     z-index : 100 ;
     pointer-events: none;
     
-    max-width  :  74%   ;
-    display:inline-block;
-    overflow   : hidden ;
+    max-width: calc( 100% - 2 * 16px - 6px ) ;
+    display: inline-block;
+    overflow: hidden ;
     white-space: nowrap ;
     
     padding-left: 5px;
@@ -57,28 +54,28 @@ div.input > label{
     transition-property: color, top, font;
     transition-duration:  .32s;
     
+    background: white;
+    
     color: rgba(0,0,0,.54);
     font-size: 17px;
     
 }
 
-div.input > label:focus { 
+div.input > label:focus {
     outline: 0; 
 }
 
 div.input > input:focus ~ label, 
 div.input > input:valid ~ label{
     
-    top: calc( -56px + 1.2px / 2 - 13px / 2 );
+    top: calc( 2.3px / 2 );
+    transform: translate(0%,-50%);
     
     padding: 0;
-    
     border-left : 5px solid transparent;
     border-right: 5px solid transparent;
     
     font-size: 13px;
-    
-    background: white;
     
 }
 
