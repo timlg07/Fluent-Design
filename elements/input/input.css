@@ -45,6 +45,7 @@ div.input > input:focus{
     border: 2.3px solid #0B6;
 }
 /* different colors */
+div.input.purple> input:focus{ border-color: #60E; }
 div.input.yellow> input:focus{ border-color: #880; }
 div.input.orange> input:focus{ border-color: #B60; }
 div.input.green > input:focus{ border-color: #0B6; }
@@ -122,6 +123,7 @@ div.input > input:hover ~ label{
     color: rgba(0,0,0,.76);
 }
 /* different colors */
+div.input.purple> input:focus ~ label{ color: #60E !important; }
 div.input.orange> input:focus ~ label{ color: #B60 !important; }
 div.input.yellow> input:focus ~ label{ color: #880 !important; }
 div.input.green > input:focus ~ label{ color: #0B6 !important; }
