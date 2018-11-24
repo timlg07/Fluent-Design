@@ -14,4 +14,21 @@
         </div>
     </div>
     
+    <script>
+        
+        // hides the loading animation
+        function hideLoader( ){
+            document.querySelector( 'div.loader-fullscreen-wrapper' ).style.display = 'none';
+        }
+        
+        // shows the loading animation again
+        function showLoader( ){
+            document.querySelector( 'div.loader-fullscreen-wrapper' ).style.display = 'initial';
+        }
+        
+        // default call on pageload
+        window.addEventListener( 'load',hideLoader );
+        
+    </script>
+    
 </body>
