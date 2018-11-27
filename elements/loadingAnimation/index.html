@@ -1,0 +1,50 @@
+<head>
+    <link rel="stylesheet" href="loading.css"/>
+</head>
+
+<body>
+    
+    <div class="loader-fullscreen-wrapper">
+        <div class="loader-fullscreen">
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+        </div>
+    </div>
+    
+    <center>
+    <h1>Sample Text</h1>
+    <br>Sample Text<br>
+    </center><br>
+    
+    <div class="loader">
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+    </div>
+    
+    <script>
+        
+        // hides the loading animation
+        function hideLoader( ){
+            document.querySelector( 'div.loader-fullscreen-wrapper' ).style.display = 'none';
+        }
+        
+        // shows the loading animation again
+        function showLoader( ){
+            document.querySelector( 'div.loader-fullscreen-wrapper' ).style.display = 'initial';
+        }
+        
+        // default call on pageload
+        //window.addEventListener( 'load',hideLoader );
+        
+	// only for testing: simulating 3sec loading
+	window.setTimeout( hideLoader,3000 );
+
+    </script>
+    
+</body>
