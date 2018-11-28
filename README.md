@@ -5,7 +5,7 @@ Microsofts Fluent Design with pure HTML/CSS/JS
 ### Elements:
 | ELEMENT               | inspired by     | demo |
 | --------------------- | --------------- | ---- |
-| __Loading Animation__ | Fluent Design   | |
+| __Loading Animation__ | Fluent Design   | [tim-greller.tk/fl-elements/ldng](http://tim-greller.tk/fl-elements/ldng/)|
 | __Navigation-Bar__    | Fluent Design   | [tim-greller.tk/fl](http://tim-greller.tk/fl) |
 | __Input__             | Material Design | |
 | __Scrollbar__         | Fluent Design   | |
