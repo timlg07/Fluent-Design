@@ -1,11 +1,11 @@
 # Loading Animation while your page is loading
 
-1. Include stylesheet
+### 1. Include stylesheet
 ```
 <link rel="stylesheet" href="loading.css"/>
 ```
 
-2. Create HTML elements
+### 2. Create HTML elements
 ```
 <div class="loader-fullscreen-wrapper">
     <div class="loader-fullscreen">
@@ -18,7 +18,7 @@
 </div>
 ```
 
-3. Add JavaScript functions and listener
+### 3. Add JavaScript functions and listener
 ```
 <script>
 
