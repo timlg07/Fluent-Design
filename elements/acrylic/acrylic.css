@@ -1,0 +1,48 @@
+.acrylic{
+    background:inherit;
+    position:relative;
+    overflow:hidden;
+    z-index:1;
+}
+.acrylic:before{
+    /* Positioning */
+    content:"";
+    position:absolute;
+    top:-26px;
+    left:-25px;
+    right:-25px;
+    bottom:-25px;
+    z-index:-1;
+    
+    /* [0] 'Desktop' background */
+    background:inherit;
+    
+    /* [1] Saturation boost */       /* [2] Gaussian blur */
+    -webkit-filter:saturate(200%)    blur(16px);
+            filter:saturate(200%)    blur(16px);
+    
+    /* [3] Exclusion blend */
+    background-color: rgba(250, 255, 255, 0.1);
+    Background-blend-mode: exclusion;
+    
+    /* [4] Color overlay */
+    -webkit-box-shadow:inset 0 0 0 8000px rgba(225, 245, 254, 0.1);
+            box-shadow:inset 0 0 0 8000px rgba(225, 245, 254, 0.1);
+    
+}
+.acrylic:after{
+    /* Positioning */
+    content: "";
+    position:absolute;
+    top:-26px;
+    left:-25px;
+    right:-25px;
+    bottom:-25px;
+    z-index:0;
+    
+    /* [5] Tiled noise texture */
+    background-image: url("acrylicTexture.png");
+    background-size: 86px;
+    opacity: 0.09;
+    filter: blur(.41px);
+}
