@@ -41,7 +41,7 @@
     z-index:0;
     
     /* [5] Tiled noise texture */
-    background-image: url("acrylicTexture.png");
+    background-image: url("noise.png");
     background-size: 86px;
     opacity: 0.09;
     filter: blur(.41px);
