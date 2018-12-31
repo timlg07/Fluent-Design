@@ -34,3 +34,32 @@
     
 </script>
 ```
+
+# Loading Animation in your website while loading more content
+### 1. Include stylesheet
+```
+<link rel="stylesheet" href="loading.css"/>
+```
+
+### 2. Create HTML elements
+```
+<div class="loader">
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+</div>
+```
+
+### 3. Add JavaScript functions
+(If you have multiple loaders at the same time, give them Ids and adjust the querySelector.)
+```
+<script>
+
+    function hideLoader( ){
+        document.querySelector( 'div.loader' ).style.display = 'none';
+    }
+    
+</script>
+```
