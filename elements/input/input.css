@@ -50,7 +50,7 @@ div.input.orange > input:focus{ border-color: #F62; }
 div.input.purple > input:focus{ border-color: #60E; }
 div.input.green  > input:focus{ border-color: #0B6; }
 div.input.blue   > input:focus{ border-color: #06B; }
-div.input.red    > input:focus{ border-color: #C31; }
+div.input.red    > input:focus{ border-color: #B02; }
 
 
 /* Label */
@@ -128,4 +128,4 @@ div.input.yellow > input:focus ~ label{ color: #FC1 !important; }
 div.input.purple > input:focus ~ label{ color: #60E !important; }
 div.input.green  > input:focus ~ label{ color: #0B6 !important; }
 div.input.blue   > input:focus ~ label{ color: #06B !important; }
-div.input.red    > input:focus ~ label{ color: #C31 !important; }
+div.input.red    > input:focus ~ label{ color: #B02 !important; }
