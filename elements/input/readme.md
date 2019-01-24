@@ -1,5 +1,6 @@
 # Input
 (inspired by Googles Material Design)  
+demo: [tim-greller.tk/fl-elements/inpt](http://tim-greller.tk/fl-elements/inpt)
 
 ## How to use
 1. Include the stylesheet:
