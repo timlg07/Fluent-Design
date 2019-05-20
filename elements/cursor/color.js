@@ -11,10 +11,10 @@ class Color {
         return n;
     }
     
-    get r () { return this.array[0]; } /**/ get red   () { this.r; }
-    get g () { return this.array[1]; } /**/ get green () { this.g; }
-    get b () { return this.array[2]; } /**/ get blue  () { this.b; }
-    get a () { return this.array[3]; } /**/ get alpha () { this.a; }
+    get r () { return this.array[0]; } /**/ get red   () { return this.r; }
+    get g () { return this.array[1]; } /**/ get green () { return this.g; }
+    get b () { return this.array[2]; } /**/ get blue  () { return this.b; }
+    get a () { return this.array[3]; } /**/ get alpha () { return this.a; }
     
     set r (num) { this.array[0] = Math.min( Math.max( 0,num ),255 ); this.onChange(this); } /**/ set red   (num) { this.r = num; }
     set g (num) { this.array[1] = Math.min( Math.max( 0,num ),255 ); this.onChange(this); } /**/ set green (num) { this.g = num; }
