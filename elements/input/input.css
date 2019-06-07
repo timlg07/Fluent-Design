@@ -20,6 +20,7 @@ div.input > input{
     /* input fills the whole size of the div */
     width : 100%;
     height: 100%;
+    box-sizing: border-box;
     
     /* space around the text */
     padding: 14px 16px;
