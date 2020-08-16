@@ -2,19 +2,19 @@ body::-webkit-scrollbar {
     background: transparent;
     width: 16px;
 }
-body.scrollbar-normal::-webkit-scrollbar-track {
+
+
+body::-webkit-scrollbar-track {
     /* possible gradient: http://colorzilla.com/gradient-editor/#7a7a7a+0,7a7a7a+100&0+50,1+51,1+95,1+96,0+96 */
     background: transparent;
 }
+
 body.scrollbar-hover::-webkit-scrollbar-track {
     background: rgba(255,255,255,0.3);
 }
 
 
-/* THUMB: */
-
-body.scrollbar-normal::-webkit-scrollbar-thumb {
-    
+body::-webkit-scrollbar-thumb {
     border-radius: 2%;
     
     /* background simulating half width (width can't be changed onhover) + hover-trigger gets bigger */
@@ -22,15 +22,12 @@ body.scrollbar-normal::-webkit-scrollbar-thumb {
     background: -webkit-linear-gradient(left, rgba(188,188,188,0) 0%,rgba(188,188,188,0) 50%,rgba(188,188,188,1) 51%,rgba(188,188,188,1) 95%,rgba(188,188,188,0) 96%,rgba(188,188,188,0) 100%); /* Chrome10-25,Safari5.1-6 */
     background: linear-gradient(to right, rgba(188,188,188,0) 0%,rgba(188,188,188,0) 50%,rgba(188,188,188,1) 51%,rgba(188,188,188,1) 95%,rgba(188,188,188,0) 96%,rgba(188,188,188,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00bcbcbc', endColorstr='#00bcbcbc',GradientType=1 ); /* IE6-9*/
-
 }
 
 body.scrollbar-hover::-webkit-scrollbar-thumb {
-    
     background: rgba(255,255,255,0.75);
     
        -moz-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
     -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
             box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
-
 }

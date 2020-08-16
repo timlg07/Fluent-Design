@@ -1,12 +1,11 @@
-window.addEventListener( "load",()=>{
-    window.addEventListener( "mousemove",(evt)=>{
-        if( evt.clientX >= (document.body.clientWidth-5) ){
-            document.body.classList.add   ( "scrollbar-hover"  );
-            document.body.classList.remove( "scrollbar-normal" );
-        } else if( document.body.classList.contains( "scrollbar-hover" )){
-            document.body.classList.remove( "scrollbar-hover"  );
-            document.body.classList.add   ( "scrollbar-normal" );
+window.addEventListener('load', () => {
+    window.addEventListener('mousemove', evt => {
+        const detectionRange = 5/*px*/;
+        const hoverClass = 'scrollbar-hover';
+        if (evt.clientX >= (document.body.clientWidth - detectionRange)) {
+            document.body.classList.add(hoverClass);
+        } else {
+            document.body.classList.remove(hoverClass);
         }
     });
-    document.body.classList.add( "scrollbar-normal" );
 });
