@@ -11,7 +11,6 @@ body::-webkit-scrollbar-button {
 
 
 body::-webkit-scrollbar-track {
-    /* possible gradient: http://colorzilla.com/gradient-editor/#7a7a7a+0,7a7a7a+100&0+50,1+51,1+95,1+96,0+96 */
     background: transparent;
 }
 
@@ -28,10 +27,8 @@ body::-webkit-scrollbar-thumb {
      * Permalink - use to edit and share this gradient: 
      * https://colorzilla.com/gradient-editor/#777777+55,777777+96&0+55,1+56,1+95,0.01+96,0+96
      */
-    background: -moz-linear-gradient(left,  rgba(119,119,119,0) 55%, rgba(119,119,119,1) 56%, rgba(119,119,119,1) 95%, rgba(119,119,119,0) 96%); /* FF3.6-15 */
     background: -webkit-linear-gradient(left,  rgba(119,119,119,0) 55%,rgba(119,119,119,1) 56%,rgba(119,119,119,1) 95%,rgba(119,119,119,0) 96%); /* Chrome10-25,Safari5.1-6 */
     background: linear-gradient(to right,  rgba(119,119,119,0) 55%,rgba(119,119,119,1) 56%,rgba(119,119,119,1) 95%,rgba(119,119,119,0) 96%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00777777', endColorstr='#00777777',GradientType=1 ); /* IE6-9 */
 }
 
 body.scrollbar-hover::-webkit-scrollbar-thumb {
