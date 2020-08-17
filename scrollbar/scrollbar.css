@@ -38,6 +38,10 @@ body.scrollbar-hover::-webkit-scrollbar-thumb:hover {
     background: #8a8a8a;
 }
 
+body.scrollbar-hover::-webkit-scrollbar-thumb:active {
+    background: #999;
+}
+
 
 /* Scrollbar buttons */
 
