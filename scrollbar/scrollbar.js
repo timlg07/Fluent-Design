@@ -1,6 +1,6 @@
 (function() {
     const detectionRange = 5/*px*/;
-    const scrollBarVisibilityTime = 1600/*ms*/;
+    const scrollBarVisibilityTime = 1800/*ms*/;
     const showClass = 'scrollbar-visible';
     const hoverClass = 'scrollbar-hover';
     
