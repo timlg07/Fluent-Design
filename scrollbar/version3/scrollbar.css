@@ -3,23 +3,15 @@ body::-webkit-scrollbar {
     width: 12px;
 }
 
-body::-webkit-scrollbar-button {
-    
-    /* Always keep a margin for the buttons */
-    width: 100%;
-}
 
+/* normal style */
 
-body::-webkit-scrollbar-track {
+body::-webkit-scrollbar-track,
+body::-webkit-scrollbar-thumb {
     background: transparent;
 }
 
-body.scrollbar-hover::-webkit-scrollbar-track {
-    background: #555;
-}
-
-
-body::-webkit-scrollbar-thumb {
+body.scrollbar-visible::-webkit-scrollbar-thumb {
     /* 
      * This background gradient simulates a scrollbar thumb with 40% width. 
      * It uses the color #777 that is also used by Microsoft for Windows 10 designs.
@@ -31,10 +23,23 @@ body::-webkit-scrollbar-thumb {
     background: linear-gradient(to right,  rgba(119,119,119,0) 55%,rgba(119,119,119,1) 56%,rgba(119,119,119,1) 95%,rgba(119,119,119,0) 96%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 }
 
+
+/* hover style */
+
+body.scrollbar-hover::-webkit-scrollbar-track {
+    background: #555;
+}
+
 body.scrollbar-hover::-webkit-scrollbar-thumb {
     background: #777;
 }
 
+
+/* Scrollbar buttons */
+
+body::-webkit-scrollbar-button {
+    /* Always keep a margin for the buttons */
+}
 
 body.scrollbar-hover::-webkit-scrollbar-button:vertical:start:decrement {
     background:
