@@ -1,5 +1,0 @@
-https://stackoverflow.com/questions/51712513/scrollbar-not-changing-on-class-change
-
-thats the problem of version 2 and 3.
-
-note: version 3 seems to work for chromium now [2020-08-16]
