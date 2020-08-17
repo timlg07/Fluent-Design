@@ -1,6 +1,12 @@
 body::-webkit-scrollbar {
     background: transparent;
-    width: 16px;
+    width: 12px;
+}
+
+body::-webkit-scrollbar-button {
+    
+    /* Always keep a margin for the buttons */
+    width: 100%;
 }
 
 
@@ -10,24 +16,89 @@ body::-webkit-scrollbar-track {
 }
 
 body.scrollbar-hover::-webkit-scrollbar-track {
-    background: rgba(255,255,255,0.3);
+    background: #555;
 }
 
 
 body::-webkit-scrollbar-thumb {
-    border-radius: 2%;
-    
-    /* background simulating half width (width can't be changed onhover) + hover-trigger gets bigger */
-    background: -moz-linear-gradient(left, rgba(188,188,188,0) 0%, rgba(188,188,188,0) 50%, rgba(188,188,188,1) 51%, rgba(188,188,188,1) 95%, rgba(188,188,188,0) 96%, rgba(188,188,188,0) 100%); /* FF3.6-15 */
-    background: -webkit-linear-gradient(left, rgba(188,188,188,0) 0%,rgba(188,188,188,0) 50%,rgba(188,188,188,1) 51%,rgba(188,188,188,1) 95%,rgba(188,188,188,0) 96%,rgba(188,188,188,0) 100%); /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(to right, rgba(188,188,188,0) 0%,rgba(188,188,188,0) 50%,rgba(188,188,188,1) 51%,rgba(188,188,188,1) 95%,rgba(188,188,188,0) 96%,rgba(188,188,188,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00bcbcbc', endColorstr='#00bcbcbc',GradientType=1 ); /* IE6-9*/
+    /* 
+     * This background gradient simulates a scrollbar thumb with 40% width. 
+     * It uses the color #777 that is also used by Microsoft for Windows 10 designs.
+     *
+     * Permalink - use to edit and share this gradient: 
+     * https://colorzilla.com/gradient-editor/#777777+55,777777+96&0+55,1+56,1+95,0.01+96,0+96
+     */
+    background: -moz-linear-gradient(left,  rgba(119,119,119,0) 55%, rgba(119,119,119,1) 56%, rgba(119,119,119,1) 95%, rgba(119,119,119,0) 96%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(left,  rgba(119,119,119,0) 55%,rgba(119,119,119,1) 56%,rgba(119,119,119,1) 95%,rgba(119,119,119,0) 96%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to right,  rgba(119,119,119,0) 55%,rgba(119,119,119,1) 56%,rgba(119,119,119,1) 95%,rgba(119,119,119,0) 96%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00777777', endColorstr='#00777777',GradientType=1 ); /* IE6-9 */
 }
 
 body.scrollbar-hover::-webkit-scrollbar-thumb {
-    background: rgba(255,255,255,0.75);
-    
-       -moz-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
-    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
-            box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    background: #777;
+}
+
+
+body.scrollbar-hover::-webkit-scrollbar-button:vertical:start:decrement {
+    background:
+        linear-gradient(120deg, #555 40%, rgba(0, 0, 0, 0) 41%),
+        linear-gradient(240deg, #555 40%, rgba(0, 0, 0, 0) 41%),
+        linear-gradient(  0deg, #555 30%, rgba(0, 0, 0, 0) 31%);
+    background-color: #b6b6b6;
+}
+
+body.scrollbar-hover::-webkit-scrollbar-button:vertical:end:increment {
+    background:
+        linear-gradient(300deg, #555 40%, rgba(0, 0, 0, 0) 41%),
+        linear-gradient( 60deg, #555 40%, rgba(0, 0, 0, 0) 41%),
+        linear-gradient(180deg, #555 30%, rgba(0, 0, 0, 0) 31%);
+    background-color: #b6b6b6;
+}
+
+body.scrollbar-hover::-webkit-scrollbar-button:horizontal:end:increment {
+    background:
+        linear-gradient(210deg, #555 40%, rgba(0, 0, 0, 0) 41%),
+        linear-gradient(330deg, #555 40%, rgba(0, 0, 0, 0) 41%),
+        linear-gradient( 90deg, #555 30%, rgba(0, 0, 0, 0) 31%);
+    background-color: #b6b6b6;
+}
+
+body.scrollbar-hover::-webkit-scrollbar-button:horizontal:start:decrement {
+    background:
+        linear-gradient( 30deg, #555 40%, rgba(0, 0, 0, 0) 41%),
+        linear-gradient(150deg, #555 40%, rgba(0, 0, 0, 0) 41%),
+        linear-gradient(270deg, #555 30%, rgba(0, 0, 0, 0) 31%);
+    background-color: #b6b6b6;
+}
+
+body.scrollbar-hover::-webkit-scrollbar-button:vertical:start:decrement:hover {
+    background:
+        linear-gradient(120deg, #666 40%, rgba(0, 0, 0, 0) 41%),
+        linear-gradient(240deg, #666 40%, rgba(0, 0, 0, 0) 41%),
+        linear-gradient(  0deg, #666 30%, rgba(0, 0, 0, 0) 31%);
+    background-color: #b6b6b6;
+}
+
+body.scrollbar-hover::-webkit-scrollbar-button:vertical:end:increment:hover {
+    background:
+        linear-gradient(300deg, #666 40%, rgba(0, 0, 0, 0) 41%),
+        linear-gradient( 60deg, #666 40%, rgba(0, 0, 0, 0) 41%),
+        linear-gradient(180deg, #666 30%, rgba(0, 0, 0, 0) 31%);
+    background-color: #b6b6b6;
+}
+
+body.scrollbar-hover::-webkit-scrollbar-button:horizontal:end:increment:hover {
+    background:
+        linear-gradient(210deg, #666 40%, rgba(0, 0, 0, 0) 41%),
+        linear-gradient(330deg, #666 40%, rgba(0, 0, 0, 0) 41%),
+        linear-gradient( 90deg, #666 30%, rgba(0, 0, 0, 0) 31%);
+    background-color: #b6b6b6;
+}
+
+body.scrollbar-hover::-webkit-scrollbar-button:horizontal:start:decrement:hover {
+    background:
+        linear-gradient( 30deg, #666 40%, rgba(0, 0, 0, 0) 41%),
+        linear-gradient(150deg, #666 40%, rgba(0, 0, 0, 0) 41%),
+        linear-gradient(270deg, #666 30%, rgba(0, 0, 0, 0) 31%);
+    background-color: #b6b6b6;
 }
