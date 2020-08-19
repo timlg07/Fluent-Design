@@ -9,5 +9,6 @@ body.dark {
 #content {
     height: 200vh;
     width:   70vw;
-    margin:  auto;
+    margin: 1.6em auto;
+    padding:  5em;
 }
