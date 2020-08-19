@@ -1,9 +1,18 @@
 <head>
     <link rel="stylesheet" href="scrollbar.css">
+    <link rel="stylesheet" href="style.css">
     <script src="scrollbar.js"></script>
+    <script>
+        function toggleDesign() {
+            ["dark", "light"].forEach(s => document.body.classList.toggle(s));
+        }
+    </script>
 </head>
-<body style="background:#333">
 
-    <div style="height:200vh;width:70vw;margin:auto;background:#aaa">sample content</div>
-
+<body class="light">
+    <div id="content">
+        sample content
+        <br>
+        <button onclick="toggleDesign()">Change design (dark/light)</button>
+    </div>
 </body>

@@ -1,3 +1,26 @@
+/* color properties */
+
+body.dark {
+    --scrollbar-bg-color:     #555555;
+    --scrollbar-thumb-color:  #777777;
+    --scrollbar-hover-color:  #8a8a8a;
+    --scrollbar-drag-color:   #999999;
+    --scrollbar-button-color: #b6b6b6;
+    --scrollbar-button-hover-color: #666;
+}
+
+body.light {
+    --scrollbar-bg-color:     #E6E6E6;
+    --scrollbar-thumb-color:  #999999;
+    --scrollbar-hover-color:  #8a8a8a;
+    --scrollbar-drag-color:   #777777;
+    --scrollbar-button-color: #8a8a8a;
+    --scrollbar-button-hover-color: #cecece;
+}
+
+
+/* general scrollbar styling */
+
 body::-webkit-scrollbar {
     background: transparent;
     width: 12px;
@@ -19,96 +42,97 @@ body.scrollbar-visible::-webkit-scrollbar-thumb {
      * Permalink - use to edit and share this gradient: 
      * https://colorzilla.com/gradient-editor/#777777+55,777777+96&0+55,1+56,1+95,0.01+96,0+96
      */
-    background: -webkit-linear-gradient(left,  rgba(119,119,119,0) 55%,rgba(119,119,119,1) 56%,rgba(119,119,119,1) 95%,rgba(119,119,119,0) 96%); /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(to right,  rgba(119,119,119,0) 55%,rgba(119,119,119,1) 56%,rgba(119,119,119,1) 95%,rgba(119,119,119,0) 96%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    background: -webkit-linear-gradient(left, transparent 55%, var(--scrollbar-thumb-color) 56%, var(--scrollbar-thumb-color) 95%, transparent 96%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to right, transparent 55%, var(--scrollbar-thumb-color) 56%, var(--scrollbar-thumb-color) 95%, transparent 96%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 }
 
 
 /* hover style */
 
 body.scrollbar-hover::-webkit-scrollbar-track {
-    background: #555;
+    background: var(--scrollbar-bg-color);
 }
 
 body.scrollbar-hover::-webkit-scrollbar-thumb {
-    background: #777;
+    background: var(--scrollbar-thumb-color);
 }
 
 body.scrollbar-hover::-webkit-scrollbar-thumb:hover {
-    background: #8a8a8a;
+    background: var(--scrollbar-hover-color);
 }
 
 body.scrollbar-hover::-webkit-scrollbar-thumb:active {
-    background: #999;
+    background: var(--scrollbar-drag-color);
 }
 
 
 /* Scrollbar buttons */
 
+/* Uncomment this to keep a margin for the buttons when they aren't shown:
 body::-webkit-scrollbar-button {
-    /* Always keep a margin for the buttons */
-}
+    width: auto;
+}*/
 
 body.scrollbar-hover::-webkit-scrollbar-button:vertical:start:decrement {
     background:
-        linear-gradient(120deg, #555 40%, rgba(0, 0, 0, 0) 41%),
-        linear-gradient(240deg, #555 40%, rgba(0, 0, 0, 0) 41%),
-        linear-gradient(  0deg, #555 30%, rgba(0, 0, 0, 0) 31%);
-    background-color: #b6b6b6;
+        linear-gradient(120deg, var(--scrollbar-bg-color) 40%, rgba(0, 0, 0, 0) 41%),
+        linear-gradient(240deg, var(--scrollbar-bg-color) 40%, rgba(0, 0, 0, 0) 41%),
+        linear-gradient(  0deg, var(--scrollbar-bg-color) 30%, rgba(0, 0, 0, 0) 31%);
+    background-color: var(--scrollbar-button-color);
 }
 
 body.scrollbar-hover::-webkit-scrollbar-button:vertical:end:increment {
     background:
-        linear-gradient(300deg, #555 40%, rgba(0, 0, 0, 0) 41%),
-        linear-gradient( 60deg, #555 40%, rgba(0, 0, 0, 0) 41%),
-        linear-gradient(180deg, #555 30%, rgba(0, 0, 0, 0) 31%);
-    background-color: #b6b6b6;
+        linear-gradient(300deg, var(--scrollbar-bg-color) 40%, rgba(0, 0, 0, 0) 41%),
+        linear-gradient( 60deg, var(--scrollbar-bg-color) 40%, rgba(0, 0, 0, 0) 41%),
+        linear-gradient(180deg, var(--scrollbar-bg-color) 30%, rgba(0, 0, 0, 0) 31%);
+    background-color: var(--scrollbar-button-color);
 }
 
 body.scrollbar-hover::-webkit-scrollbar-button:horizontal:end:increment {
     background:
-        linear-gradient(210deg, #555 40%, rgba(0, 0, 0, 0) 41%),
-        linear-gradient(330deg, #555 40%, rgba(0, 0, 0, 0) 41%),
-        linear-gradient( 90deg, #555 30%, rgba(0, 0, 0, 0) 31%);
-    background-color: #b6b6b6;
+        linear-gradient(210deg, var(--scrollbar-bg-color) 40%, rgba(0, 0, 0, 0) 41%),
+        linear-gradient(330deg, var(--scrollbar-bg-color) 40%, rgba(0, 0, 0, 0) 41%),
+        linear-gradient( 90deg, var(--scrollbar-bg-color) 30%, rgba(0, 0, 0, 0) 31%);
+    background-color: var(--scrollbar-button-color);
 }
 
 body.scrollbar-hover::-webkit-scrollbar-button:horizontal:start:decrement {
     background:
-        linear-gradient( 30deg, #555 40%, rgba(0, 0, 0, 0) 41%),
-        linear-gradient(150deg, #555 40%, rgba(0, 0, 0, 0) 41%),
-        linear-gradient(270deg, #555 30%, rgba(0, 0, 0, 0) 31%);
-    background-color: #b6b6b6;
+        linear-gradient( 30deg, var(--scrollbar-bg-color) 40%, rgba(0, 0, 0, 0) 41%),
+        linear-gradient(150deg, var(--scrollbar-bg-color) 40%, rgba(0, 0, 0, 0) 41%),
+        linear-gradient(270deg, var(--scrollbar-bg-color) 30%, rgba(0, 0, 0, 0) 31%);
+    background-color: var(--scrollbar-button-color);
 }
 
 body.scrollbar-hover::-webkit-scrollbar-button:vertical:start:decrement:hover {
     background:
-        linear-gradient(120deg, #666 40%, rgba(0, 0, 0, 0) 41%),
-        linear-gradient(240deg, #666 40%, rgba(0, 0, 0, 0) 41%),
-        linear-gradient(  0deg, #666 30%, rgba(0, 0, 0, 0) 31%);
-    background-color: #b6b6b6;
+        linear-gradient(120deg, var(--scrollbar-button-hover-color) 40%, rgba(0, 0, 0, 0) 41%),
+        linear-gradient(240deg, var(--scrollbar-button-hover-color) 40%, rgba(0, 0, 0, 0) 41%),
+        linear-gradient(  0deg, var(--scrollbar-button-hover-color) 30%, rgba(0, 0, 0, 0) 31%);
+    background-color: var(--scrollbar-button-color);
 }
 
 body.scrollbar-hover::-webkit-scrollbar-button:vertical:end:increment:hover {
     background:
-        linear-gradient(300deg, #666 40%, rgba(0, 0, 0, 0) 41%),
-        linear-gradient( 60deg, #666 40%, rgba(0, 0, 0, 0) 41%),
-        linear-gradient(180deg, #666 30%, rgba(0, 0, 0, 0) 31%);
-    background-color: #b6b6b6;
+        linear-gradient(300deg, var(--scrollbar-button-hover-color) 40%, rgba(0, 0, 0, 0) 41%),
+        linear-gradient( 60deg, var(--scrollbar-button-hover-color) 40%, rgba(0, 0, 0, 0) 41%),
+        linear-gradient(180deg, var(--scrollbar-button-hover-color) 30%, rgba(0, 0, 0, 0) 31%);
+    background-color: var(--scrollbar-button-color);
 }
 
 body.scrollbar-hover::-webkit-scrollbar-button:horizontal:end:increment:hover {
     background:
-        linear-gradient(210deg, #666 40%, rgba(0, 0, 0, 0) 41%),
-        linear-gradient(330deg, #666 40%, rgba(0, 0, 0, 0) 41%),
-        linear-gradient( 90deg, #666 30%, rgba(0, 0, 0, 0) 31%);
-    background-color: #b6b6b6;
+        linear-gradient(210deg, var(--scrollbar-button-hover-color) 40%, rgba(0, 0, 0, 0) 41%),
+        linear-gradient(330deg, var(--scrollbar-button-hover-color) 40%, rgba(0, 0, 0, 0) 41%),
+        linear-gradient( 90deg, var(--scrollbar-button-hover-color) 30%, rgba(0, 0, 0, 0) 31%);
+    background-color: var(--scrollbar-button-color);
 }
 
 body.scrollbar-hover::-webkit-scrollbar-button:horizontal:start:decrement:hover {
     background:
-        linear-gradient( 30deg, #666 40%, rgba(0, 0, 0, 0) 41%),
-        linear-gradient(150deg, #666 40%, rgba(0, 0, 0, 0) 41%),
-        linear-gradient(270deg, #666 30%, rgba(0, 0, 0, 0) 31%);
-    background-color: #b6b6b6;
+        linear-gradient( 30deg, var(--scrollbar-button-hover-color) 40%, rgba(0, 0, 0, 0) 41%),
+        linear-gradient(150deg, var(--scrollbar-button-hover-color) 40%, rgba(0, 0, 0, 0) 41%),
+        linear-gradient(270deg, var(--scrollbar-button-hover-color) 30%, rgba(0, 0, 0, 0) 31%);
+    background-color: var(--scrollbar-button-color);
 }
