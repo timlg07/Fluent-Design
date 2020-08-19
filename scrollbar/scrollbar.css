@@ -67,9 +67,9 @@ body.scrollbar-hover::-webkit-scrollbar-thumb:active {
 
 
 /* Scrollbar buttons */
-/*
+
+/* Uncomment this to keep a margin for the buttons when they aren't shown:
 body::-webkit-scrollbar-button {
-    /* Always keep a margin for the buttons *//*
     width: auto;
 }*/
 
