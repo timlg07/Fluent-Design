@@ -1,0 +1,13 @@
+body.dark {
+    background: #333;
+}
+
+.dark #content {
+    background: #aaa;
+}
+
+#content {
+    height: 200vh;
+    width:   70vw;
+    margin:  auto;
+}
