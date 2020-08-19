@@ -2,8 +2,16 @@ body.dark {
     background: #333;
 }
 
+body.light {
+    background: #d8d8d8;
+}
+
 .dark #content {
     background: #aaa;
+}
+
+.light #content {
+    background: #efefef;
 }
 
 #content {
