@@ -1,4 +1,5 @@
 /* color properties */
+
 body.dark {
     --scrollbar-bg-color:     #555555;
     --scrollbar-thumb-color:  #777777;
@@ -7,6 +8,18 @@ body.dark {
     --scrollbar-button-color: #b6b6b6;
     --scrollbar-button-hover-color: #666;
 }
+
+body.light {
+    --scrollbar-bg-color:     #E6E6E6;
+    --scrollbar-thumb-color:  #999999;
+    --scrollbar-hover-color:  #8a8a8a;
+    --scrollbar-drag-color:   #777777;
+    --scrollbar-button-color: #8a8a8a;
+    --scrollbar-button-hover-color: #cecece;
+}
+
+
+/* general scrollbar styling */
 
 body::-webkit-scrollbar {
     background: transparent;
