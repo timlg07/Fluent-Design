@@ -19,6 +19,11 @@ body.light {
 }
 
 
+/* This is needed, so that the scrollbar can look transparent: */
+body {
+  overflow: overlay;
+}
+
 /* general scrollbar styling */
 
 body::-webkit-scrollbar {
