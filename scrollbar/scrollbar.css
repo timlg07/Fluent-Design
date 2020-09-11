@@ -1,21 +1,23 @@
 /* color properties */
 
 body.dark {
-    --scrollbar-bg-color:     #555555;
-    --scrollbar-thumb-color:  #777777;
-    --scrollbar-hover-color:  #8a8a8a;
-    --scrollbar-drag-color:   #999999;
-    --scrollbar-button-color: #b6b6b6;
-    --scrollbar-button-hover-color: #666;
+    --scrollbar-bg-color:     #555555cc;
+    --scrollbar-thumb-color:  #777777dc;
+    --scrollbar-hover-color:  #8a8a8adf;
+    --scrollbar-drag-color:   #999999ec;
+    --scrollbar-button-color: #555555ff;
+    --scrollbar-button-arrow-color: #b6b6b6ff;
+    --scrollbar-button-hover-color: #666666ff;
 }
 
 body.light {
-    --scrollbar-bg-color:     #E6E6E6;
-    --scrollbar-thumb-color:  #999999;
-    --scrollbar-hover-color:  #8a8a8a;
-    --scrollbar-drag-color:   #777777;
-    --scrollbar-button-color: #8a8a8a;
-    --scrollbar-button-hover-color: #cecece;
+    --scrollbar-bg-color:     #e6e6e6cc;
+    --scrollbar-thumb-color:  #999999dc;
+    --scrollbar-hover-color:  #8a8a8adf;
+    --scrollbar-drag-color:   #777777ec;
+    --scrollbar-button-color: #e6e6e6ff;
+    --scrollbar-button-arrow-color: #8a8a8aff;
+    --scrollbar-button-hover-color: #cececeff;
 }
 
 
@@ -80,34 +82,34 @@ body::-webkit-scrollbar-button {
 
 body.scrollbar-hover::-webkit-scrollbar-button:vertical:start:decrement {
     background:
-        linear-gradient(120deg, var(--scrollbar-bg-color) 40%, rgba(0, 0, 0, 0) 41%),
-        linear-gradient(240deg, var(--scrollbar-bg-color) 40%, rgba(0, 0, 0, 0) 41%),
-        linear-gradient(  0deg, var(--scrollbar-bg-color) 30%, rgba(0, 0, 0, 0) 31%);
-    background-color: var(--scrollbar-button-color);
+        linear-gradient(120deg, var(--scrollbar-button-color) 40%, rgba(0, 0, 0, 0) 41%),
+        linear-gradient(240deg, var(--scrollbar-button-color) 40%, rgba(0, 0, 0, 0) 41%),
+        linear-gradient(  0deg, var(--scrollbar-button-color) 30%, rgba(0, 0, 0, 0) 31%);
+    background-color: var(--scrollbar-button-arrow-color);
 }
 
 body.scrollbar-hover::-webkit-scrollbar-button:vertical:end:increment {
     background:
-        linear-gradient(300deg, var(--scrollbar-bg-color) 40%, rgba(0, 0, 0, 0) 41%),
-        linear-gradient( 60deg, var(--scrollbar-bg-color) 40%, rgba(0, 0, 0, 0) 41%),
-        linear-gradient(180deg, var(--scrollbar-bg-color) 30%, rgba(0, 0, 0, 0) 31%);
-    background-color: var(--scrollbar-button-color);
+        linear-gradient(300deg, var(--scrollbar-button-color) 40%, rgba(0, 0, 0, 0) 41%),
+        linear-gradient( 60deg, var(--scrollbar-button-color) 40%, rgba(0, 0, 0, 0) 41%),
+        linear-gradient(180deg, var(--scrollbar-button-color) 30%, rgba(0, 0, 0, 0) 31%);
+    background-color: var(--scrollbar-button-arrow-color);
 }
 
 body.scrollbar-hover::-webkit-scrollbar-button:horizontal:end:increment {
     background:
-        linear-gradient(210deg, var(--scrollbar-bg-color) 40%, rgba(0, 0, 0, 0) 41%),
-        linear-gradient(330deg, var(--scrollbar-bg-color) 40%, rgba(0, 0, 0, 0) 41%),
-        linear-gradient( 90deg, var(--scrollbar-bg-color) 30%, rgba(0, 0, 0, 0) 31%);
-    background-color: var(--scrollbar-button-color);
+        linear-gradient(210deg, var(--scrollbar-button-color) 40%, rgba(0, 0, 0, 0) 41%),
+        linear-gradient(330deg, var(--scrollbar-button-color) 40%, rgba(0, 0, 0, 0) 41%),
+        linear-gradient( 90deg, var(--scrollbar-button-color) 30%, rgba(0, 0, 0, 0) 31%);
+    background-color: var(--scrollbar-button-arrow-color);
 }
 
 body.scrollbar-hover::-webkit-scrollbar-button:horizontal:start:decrement {
     background:
-        linear-gradient( 30deg, var(--scrollbar-bg-color) 40%, rgba(0, 0, 0, 0) 41%),
-        linear-gradient(150deg, var(--scrollbar-bg-color) 40%, rgba(0, 0, 0, 0) 41%),
-        linear-gradient(270deg, var(--scrollbar-bg-color) 30%, rgba(0, 0, 0, 0) 31%);
-    background-color: var(--scrollbar-button-color);
+        linear-gradient( 30deg, var(--scrollbar-button-color) 40%, rgba(0, 0, 0, 0) 41%),
+        linear-gradient(150deg, var(--scrollbar-button-color) 40%, rgba(0, 0, 0, 0) 41%),
+        linear-gradient(270deg, var(--scrollbar-button-color) 30%, rgba(0, 0, 0, 0) 31%);
+    background-color: var(--scrollbar-button-arrow-color);
 }
 
 body.scrollbar-hover::-webkit-scrollbar-button:vertical:start:decrement:hover {
@@ -115,7 +117,7 @@ body.scrollbar-hover::-webkit-scrollbar-button:vertical:start:decrement:hover {
         linear-gradient(120deg, var(--scrollbar-button-hover-color) 40%, rgba(0, 0, 0, 0) 41%),
         linear-gradient(240deg, var(--scrollbar-button-hover-color) 40%, rgba(0, 0, 0, 0) 41%),
         linear-gradient(  0deg, var(--scrollbar-button-hover-color) 30%, rgba(0, 0, 0, 0) 31%);
-    background-color: var(--scrollbar-button-color);
+    background-color: var(--scrollbar-button-arrow-color);
 }
 
 body.scrollbar-hover::-webkit-scrollbar-button:vertical:end:increment:hover {
@@ -123,7 +125,7 @@ body.scrollbar-hover::-webkit-scrollbar-button:vertical:end:increment:hover {
         linear-gradient(300deg, var(--scrollbar-button-hover-color) 40%, rgba(0, 0, 0, 0) 41%),
         linear-gradient( 60deg, var(--scrollbar-button-hover-color) 40%, rgba(0, 0, 0, 0) 41%),
         linear-gradient(180deg, var(--scrollbar-button-hover-color) 30%, rgba(0, 0, 0, 0) 31%);
-    background-color: var(--scrollbar-button-color);
+    background-color: var(--scrollbar-button-arrow-color);
 }
 
 body.scrollbar-hover::-webkit-scrollbar-button:horizontal:end:increment:hover {
@@ -131,7 +133,7 @@ body.scrollbar-hover::-webkit-scrollbar-button:horizontal:end:increment:hover {
         linear-gradient(210deg, var(--scrollbar-button-hover-color) 40%, rgba(0, 0, 0, 0) 41%),
         linear-gradient(330deg, var(--scrollbar-button-hover-color) 40%, rgba(0, 0, 0, 0) 41%),
         linear-gradient( 90deg, var(--scrollbar-button-hover-color) 30%, rgba(0, 0, 0, 0) 31%);
-    background-color: var(--scrollbar-button-color);
+    background-color: var(--scrollbar-button-arrow-color);
 }
 
 body.scrollbar-hover::-webkit-scrollbar-button:horizontal:start:decrement:hover {
@@ -139,5 +141,5 @@ body.scrollbar-hover::-webkit-scrollbar-button:horizontal:start:decrement:hover 
         linear-gradient( 30deg, var(--scrollbar-button-hover-color) 40%, rgba(0, 0, 0, 0) 41%),
         linear-gradient(150deg, var(--scrollbar-button-hover-color) 40%, rgba(0, 0, 0, 0) 41%),
         linear-gradient(270deg, var(--scrollbar-button-hover-color) 30%, rgba(0, 0, 0, 0) 31%);
-    background-color: var(--scrollbar-button-color);
+    background-color: var(--scrollbar-button-arrow-color);
 }
