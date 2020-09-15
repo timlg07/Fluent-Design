@@ -29,32 +29,27 @@ body {
 /* general scrollbar styling */
 
 body::-webkit-scrollbar {
-    background: transparent;
-    width: 12px;
+    width: 0;
 }
 
 
 /* normal style */
 
-body::-webkit-scrollbar-track,
-body::-webkit-scrollbar-thumb {
-    background: transparent;
+
+body.scrollbar-visible::-webkit-scrollbar {
+    width: 5px;
 }
 
 body.scrollbar-visible::-webkit-scrollbar-thumb {
-    /* 
-     * This background gradient simulates a scrollbar thumb with 40% width. 
-     * It uses the color #777 that is also used by Microsoft for Windows 10 designs.
-     *
-     * Permalink - use to edit and share this gradient: 
-     * https://colorzilla.com/gradient-editor/#777777+55,777777+96&0+55,1+56,1+95,0.01+96,0+96
-     */
-    background: -webkit-linear-gradient(left, transparent 55%, var(--scrollbar-thumb-color) 56%, var(--scrollbar-thumb-color) 95%, transparent 96%); /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(to right, transparent 55%, var(--scrollbar-thumb-color) 56%, var(--scrollbar-thumb-color) 95%, transparent 96%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    background: var(--scrollbar-thumb-color);
 }
 
 
 /* hover style */
+
+body.scrollbar-hover::-webkit-scrollbar {
+    width: 12px;
+}
 
 body.scrollbar-hover::-webkit-scrollbar-track {
     background: var(--scrollbar-bg-color);
