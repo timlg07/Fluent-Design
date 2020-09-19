@@ -21,23 +21,25 @@ body.light {
 }
 
 
-/* This is needed, so that the scrollbar can look transparent: */
-body {
+/* This is needed, so that the scrollbar can look transparent. */
+body.continue-behind-scrollbar {
   overflow: overlay;
 }
+
 
 /* general scrollbar styling */
 
 body::-webkit-scrollbar {
-    width: 0;
+    --scrollbar-size: 0;
+    width: var(--scrollbar-size);
+    height: var(--scrollbar-size);
 }
 
 
 /* normal style */
 
-
 body.scrollbar-visible::-webkit-scrollbar {
-    width: 5px;
+    --scrollbar-size: 5px;
 }
 
 body.scrollbar-visible::-webkit-scrollbar-thumb {
@@ -48,7 +50,7 @@ body.scrollbar-visible::-webkit-scrollbar-thumb {
 /* hover style */
 
 body.scrollbar-hover::-webkit-scrollbar {
-    width: 12px;
+    --scrollbar-size: 12px;
 }
 
 body.scrollbar-hover::-webkit-scrollbar-track {
