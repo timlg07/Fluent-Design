@@ -15,7 +15,9 @@
          * This is very simple in this case, because we only use the body.
          */
         let minDetectionX = document.body.clientWidth - detectionRange;
-        if (event.clientX > minDetectionX) {
+        let minDetectionY = document.body.clientHeight - detectionRange;
+
+        if (event.clientX > minDetectionX || event.clientY > minDetectionY) {
             document.body.classList.add(hoverClass);
         } else if (document.body.classList.contains(hoverClass)) {
             // Show normal scrollbar style instead of hovered style.
