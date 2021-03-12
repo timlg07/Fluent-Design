@@ -11,6 +11,6 @@ It involves multiple layers, including:
  - Tiled noise texture  
 
 As you can see in the picture, Microsoft uses the same layers in the same order:
-![Reference](https://docs.microsoft.com/en-us/windows/uwp/design/style/images/acrylicrecipe_diagram.jpg)
+![Reference](https://web.archive.org/web/20181122020524im_/https://docs.microsoft.com/en-us/windows/uwp/design/style/images/acrylicrecipe_diagram.jpg)
 A possible result using the acrylic.css and only one <code>div</code>-container is shown below:
 ![Screenshot](screenshot.png)
