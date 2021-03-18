@@ -295,156 +295,154 @@ function removeOnClick( evt ){
 
 
 //======// FLUENT REVEAL EFFECT //======================================//
-/*REVEAL*/  var $fluentRevealEffect = {
-/*REVEAL*/      lightColor  : "rgba(255,255,255,1)",
-/*REVEAL*/      darkColor   : "#212121",
-/*REVEAL*/      gradientSize: 100,
-/*REVEAL*/      lastEvent   : { pageX:screen.width,pageY:screen.height }
-/*REVEAL*/  }
-/*REVEAL*/  
-/*REVEAL*/  var $navElements = {}
-/*REVEAL*/  
-/*REVEAL*/  function onMouseMove( e ){
-/*REVEAL*/
-/*REVEAL*/      // update height if hovered
-/*REVEAL*/      updateActiveNavElemView( $activeSection );
-/*REVEAL*/      
-/*REVEAL*/      // CONTENT //
-/*REVEAL*/      
-/*REVEAL*/      // the borders of all cards
-/*REVEAL*/      let cards = document.querySelectorAll( ".cardboard > .card > .border" );
-/*REVEAL*/      // the border of the currently hovered card
-/*REVEAL*/      let hover_card = document.querySelector( ".cardboard > .card > .border:hover" );
-/*REVEAL*/      // foreach( cards )
-/*REVEAL*/      for( let i=0; i<cards.length; i++ ){
-/*REVEAL*/          if( cards.item( i ) !== hover_card ){ // if the card is not hovered
-/*REVEAL*/              let pos = ( e.pageX - cards.item( i ).getBoundingClientRect().left )+ " " +
-/*REVEAL*/                        ( e.pageY - cards.item( i ).getBoundingClientRect().top  );
-/*REVEAL*/              cards.item( i ).style.background = 
-/*REVEAL*/                  "-webkit-gradient(radial, "+pos+", 0, "+pos+", "+$fluentRevealEffect.gradientSize*2+
-/*REVEAL*/                  ", from(#dfdfdf), to(transparent))"
-/*REVEAL*/              ;
-/*REVEAL*/          } else { // if the card is hovered
-/*REVEAL*/              hover_card.style.background = "#FEFEFE";
-/*REVEAL*/          }
-/*REVEAL*/      }
-/*REVEAL*/
-/*REVEAL*/      // the overlays of all cards
-/*REVEAL*/      let overlays = document.querySelectorAll( ".cardboard > .card > .border > .content > .overlay" );
-/*REVEAL*/      // the overlay of the currently hovered card
-/*REVEAL*/      let hovered_overlay = document.querySelector(".cardboard > .card > .border > .content > .overlay:hover");
-/*REVEAL*/      for( let i=0; i<overlays.length; i++ ){
-/*REVEAL*/          if( overlays.item( i ) == hovered_overlay ){ // if the card is hovered
-/*REVEAL*/              let pos = ( e.pageX - hovered_overlay.getBoundingClientRect().left )+ " " +
-/*REVEAL*/                        ( e.pageY - hovered_overlay.getBoundingClientRect().top  );
-/*REVEAL*/              hovered_overlay.style.background = 
-/*REVEAL*/                  "-webkit-gradient(radial, "+pos+", 0, "+pos+", "+$fluentRevealEffect.gradientSize*3+
-/*REVEAL*/                  ", from(rgba(255,255,255,.35)), to(rgba(250,250,250,.001))"
-/*REVEAL*/              ;
-/*REVEAL*/          } else { // if the card is not hovered
-/*REVEAL*/              overlays.item( i ).style.background = "rgba(0,0,0,.1)"
-/*REVEAL*/          }
-/*REVEAL*/      }
-/*REVEAL*/      
-/*REVEAL*/      
-/*REVEAL*/      // NAVIGATION_VIEW //
-/*REVEAL*/      
-/*REVEAL*/      // save the current position for mouseMove simulations
-/*REVEAL*/      $fluentRevealEffect.lastEvent = e;
-/*REVEAL*/      
-/*REVEAL*/      // reset colors
-/*REVEAL*/      for( let i=0; i<$navElements.symbols.length; i++ ){
-/*REVEAL*/          $navElements.symbols.item( i ).style.background = getNavBackground();
-/*REVEAL*/          $navElements.labels .item( i ).style.background = getNavBackground();
-/*REVEAL*/          $navElements.reveals.item( i ).style.background = getNavBackground();
-/*REVEAL*/      }
-/*REVEAL*/      
-/*REVEAL*/      // CASE#1: nav-labels are hidden
-/*REVEAL*/      if( getNavigationState().isHidden ){
-/*REVEAL*/          
-/*REVEAL*/          // reveal effect for all symbols
-/*REVEAL*/          let rev = document.querySelectorAll( ".reveal" );
-/*REVEAL*/          for( let i=0; i<rev.length; i++ ){
-/*REVEAL*/              let pos = ( e.pageX - rev.item( i ).getBoundingClientRect().left )+ " " +
-/*REVEAL*/                        ( e.pageY - rev.item( i ).getBoundingClientRect().top  );
-/*REVEAL*/              let gradient =
-/*REVEAL*/                  "-webkit-gradient(radial, "+pos+", 0, "+pos+", "+$fluentRevealEffect.gradientSize*1.1+
-/*REVEAL*/                  ", from(rgba(255,255,255,.7)), to(transparent))"
-/*REVEAL*/              ;
-/*REVEAL*/              rev.item( i ).style.background = gradient;
-/*REVEAL*/          }
-/*REVEAL*/          // hover effect for hovered symbol
-/*REVEAL*/          let hov = document.querySelector( ".symbol-wrapper:hover" )
-/*REVEAL*/          if( hov ){
-/*REVEAL*/              hov.style.background = rgb2rgba( getNavBackground(),.5 );
-/*REVEAL*/          }
-/*REVEAL*/      
-/*REVEAL*/      // CASE#2: nav-labels are shown
-/*REVEAL*/      } else {
-/*REVEAL*/          
-/*REVEAL*/          // CASE#2.1: a nav-label is hovered
-/*REVEAL*/          let lab = document.querySelector( "#navigation > #nav-labels > .nav-label:hover" );
-/*REVEAL*/          if( lab ) {
-/*REVEAL*/              
-/*REVEAL*/              // label hover effect // 
-/*REVEAL*/              let pos = ( e.pageX - lab.getBoundingClientRect().left )+ " " +
-/*REVEAL*/                        ( e.pageY - lab.getBoundingClientRect().top  );
-/*REVEAL*/              let gradient =
-/*REVEAL*/                   "-webkit-gradient(radial, "+pos+", 0, "+pos+", "+$fluentRevealEffect.gradientSize*4+
-/*REVEAL*/                   ", from(rgba(255,255,255,0.3)), to(rgba(255,255,255,0.0))), "+getNavBackground()
-/*REVEAL*/              ;
-/*REVEAL*/              lab.style.background = gradient;
-/*REVEAL*/              
-/*REVEAL*/              // symbol hover effect //
-/*REVEAL*/              let index = 0;
-/*REVEAL*/              for( let i=0; i<$navElements.labels.length; i++ ){
-/*REVEAL*/                  if( $navElements.labels.item( i ) == lab ) index = i; 
-/*REVEAL*/              }
-/*REVEAL*/              pos = ( e.pageX - $navElements.reveals.item( index ).getBoundingClientRect().left )+ " " +
-/*REVEAL*/                    ( e.pageY - $navElements.reveals.item( index ).getBoundingClientRect().top  );
-/*REVEAL*/              gradient =
-/*REVEAL*/                   "-webkit-gradient(radial, "+pos+", 0, "+pos+", "+$fluentRevealEffect.gradientSize*4+
-/*REVEAL*/                   ", from(rgba(255,255,255,0.3)), to(rgba(255,255,255,0.0))), "+getNavBackground()
-/*REVEAL*/              ;
-/*REVEAL*/              $navElements.reveals.item( index ).style.background = gradient;
-/*REVEAL*/              $navElements.symbols.item( index ).style.background = "transparent";
-/*REVEAL*/          
-/*REVEAL*/          // CASE#2.2: no nav-label is hovered
-/*REVEAL*/          } else {
-/*REVEAL*/              
-/*REVEAL*/              // CASE#2.2.1: no symbol is hovered -> no effect
-/*REVEAL*/              let revhov = document.querySelector( ".reveal:hover" );
-/*REVEAL*/              let rev = document.querySelectorAll( ".reveal" );
-/*REVEAL*/              if( !revhov ) return;
-/*REVEAL*/              
-/*REVEAL*/              // CASE#2.2.2: a symbol is hovered
-/*REVEAL*/              
-/*REVEAL*/              let index = 0;
-/*REVEAL*/              for( let i=0; i<rev.length; i++ ){
-/*REVEAL*/                  if( rev.item( i ) == revhov ) index = i; 
-/*REVEAL*/              }
-/*REVEAL*/              // symbol hover effect //
-/*REVEAL*/              let pos = ( e.pageX - revhov.getBoundingClientRect().left )+ " " +
-/*REVEAL*/                        ( e.pageY - revhov.getBoundingClientRect().top  );
-/*REVEAL*/              let gradient =
-/*REVEAL*/                   "-webkit-gradient(radial, "+pos+", 0, "+pos+", "+$fluentRevealEffect.gradientSize*4+
-/*REVEAL*/                   ", from(rgba(255,255,255,0.3)), to(rgba(255,255,255,0.0))), "+getNavBackground()
-/*REVEAL*/              ;
-/*REVEAL*/              revhov.style.background = gradient;
-/*REVEAL*/              
-/*REVEAL*/              // label hover effect //
-/*REVEAL*/              pos = ( e.pageX - $navElements.labels.item( index ).getBoundingClientRect().left )+ " " +
-/*REVEAL*/                    ( e.pageY - $navElements.labels.item( index ).getBoundingClientRect().top  );
-/*REVEAL*/              gradient =
-/*REVEAL*/                   "-webkit-gradient(radial, "+pos+", 0, "+pos+", "+$fluentRevealEffect.gradientSize*4+
-/*REVEAL*/                   ", from(rgba(255,255,255,0.3)), to(rgba(255,255,255,0.0))), "+getNavBackground()
-/*REVEAL*/              ;
-/*REVEAL*/              $navElements.labels .item( index ).style.background = gradient;
-/*REVEAL*/              $navElements.symbols.item( index ).style.background = "transparent";
-/*REVEAL*/      
-/*REVEAL*/          }
-/*REVEAL*/      }
-/*REVEAL*/  }
+var $fluentRevealEffect = {
+    lightColor  : "rgba(255,255,255,1)",
+    darkColor   : "#212121",
+    gradientSize: 100,
+    lastEvent   : { pageX:screen.width,pageY:screen.height }
+}
+
+var $navElements = {}
+
+function onMouseMove( e ){
+    // update height if hovered
+    updateActiveNavElemView( $activeSection );
+    
+    // CONTENT //
+    
+    // the borders of all cards
+    let cards = document.querySelectorAll( ".cardboard > .card > .border" );
+    // the border of the currently hovered card
+    let hover_card = document.querySelector( ".cardboard > .card > .border:hover" );
+    // foreach( cards )
+    for( let i=0; i<cards.length; i++ ){
+        if( cards.item( i ) !== hover_card ){ // if the card is not hovered
+            let pos = ( e.pageX - cards.item( i ).getBoundingClientRect().left )+ " " +
+                      ( e.pageY - cards.item( i ).getBoundingClientRect().top  );
+            cards.item( i ).style.background = 
+                "-webkit-gradient(radial, "+pos+", 0, "+pos+", "+$fluentRevealEffect.gradientSize*2+
+                ", from(#dfdfdf), to(transparent))"
+            ;
+        } else { // if the card is hovered
+            hover_card.style.background = "#FEFEFE";
+        }
+    }
+    // the overlays of all cards
+    let overlays = document.querySelectorAll( ".cardboard > .card > .border > .content > .overlay" );
+    // the overlay of the currently hovered card
+    let hovered_overlay = document.querySelector(".cardboard > .card > .border > .content > .overlay:hover");
+    for( let i=0; i<overlays.length; i++ ){
+        if( overlays.item( i ) == hovered_overlay ){ // if the card is hovered
+            let pos = ( e.pageX - hovered_overlay.getBoundingClientRect().left )+ " " +
+                      ( e.pageY - hovered_overlay.getBoundingClientRect().top  );
+            hovered_overlay.style.background = 
+                "-webkit-gradient(radial, "+pos+", 0, "+pos+", "+$fluentRevealEffect.gradientSize*3+
+                ", from(rgba(255,255,255,.35)), to(rgba(250,250,250,.001))"
+            ;
+        } else { // if the card is not hovered
+            overlays.item( i ).style.background = "rgba(0,0,0,.1)"
+        }
+    }
+    
+    
+    // NAVIGATION_VIEW //
+    
+    // save the current position for mouseMove simulations
+    $fluentRevealEffect.lastEvent = e;
+    
+    // reset colors
+    for( let i=0; i<$navElements.symbols.length; i++ ){
+        $navElements.symbols.item( i ).style.background = getNavBackground();
+        $navElements.labels .item( i ).style.background = getNavBackground();
+        $navElements.reveals.item( i ).style.background = getNavBackground();
+    }
+    
+    // CASE#1: nav-labels are hidden
+    if( getNavigationState().isHidden ){
+        
+        // reveal effect for all symbols
+        let rev = document.querySelectorAll( ".reveal" );
+        for( let i=0; i<rev.length; i++ ){
+            let pos = ( e.pageX - rev.item( i ).getBoundingClientRect().left )+ " " +
+                      ( e.pageY - rev.item( i ).getBoundingClientRect().top  );
+            let gradient =
+                "-webkit-gradient(radial, "+pos+", 0, "+pos+", "+$fluentRevealEffect.gradientSize*1.1+
+                ", from(rgba(255,255,255,.7)), to(transparent))"
+            ;
+            rev.item( i ).style.background = gradient;
+        }
+        // hover effect for hovered symbol
+        let hov = document.querySelector( ".symbol-wrapper:hover" )
+        if( hov ){
+            hov.style.background = rgb2rgba( getNavBackground(),.5 );
+        }
+    
+    // CASE#2: nav-labels are shown
+    } else {
+        
+        // CASE#2.1: a nav-label is hovered
+        let lab = document.querySelector( "#navigation > #nav-labels > .nav-label:hover" );
+        if( lab ) {
+            
+            // label hover effect // 
+            let pos = ( e.pageX - lab.getBoundingClientRect().left )+ " " +
+                      ( e.pageY - lab.getBoundingClientRect().top  );
+            let gradient =
+                 "-webkit-gradient(radial, "+pos+", 0, "+pos+", "+$fluentRevealEffect.gradientSize*4+
+                 ", from(rgba(255,255,255,0.3)), to(rgba(255,255,255,0.0))), "+getNavBackground()
+            ;
+            lab.style.background = gradient;
+            
+            // symbol hover effect //
+            let index = 0;
+            for( let i=0; i<$navElements.labels.length; i++ ){
+                if( $navElements.labels.item( i ) == lab ) index = i; 
+            }
+            pos = ( e.pageX - $navElements.reveals.item( index ).getBoundingClientRect().left )+ " " +
+                  ( e.pageY - $navElements.reveals.item( index ).getBoundingClientRect().top  );
+            gradient =
+                 "-webkit-gradient(radial, "+pos+", 0, "+pos+", "+$fluentRevealEffect.gradientSize*4+
+                 ", from(rgba(255,255,255,0.3)), to(rgba(255,255,255,0.0))), "+getNavBackground()
+            ;
+            $navElements.reveals.item( index ).style.background = gradient;
+            $navElements.symbols.item( index ).style.background = "transparent";
+        
+        // CASE#2.2: no nav-label is hovered
+        } else {
+            
+            // CASE#2.2.1: no symbol is hovered -> no effect
+            let revhov = document.querySelector( ".reveal:hover" );
+            let rev = document.querySelectorAll( ".reveal" );
+            if( !revhov ) return;
+            
+            // CASE#2.2.2: a symbol is hovered
+            
+            let index = 0;
+            for( let i=0; i<rev.length; i++ ){
+                if( rev.item( i ) == revhov ) index = i; 
+            }
+            // symbol hover effect //
+            let pos = ( e.pageX - revhov.getBoundingClientRect().left )+ " " +
+                      ( e.pageY - revhov.getBoundingClientRect().top  );
+            let gradient =
+                 "-webkit-gradient(radial, "+pos+", 0, "+pos+", "+$fluentRevealEffect.gradientSize*4+
+                 ", from(rgba(255,255,255,0.3)), to(rgba(255,255,255,0.0))), "+getNavBackground()
+            ;
+            revhov.style.background = gradient;
+            
+            // label hover effect //
+            pos = ( e.pageX - $navElements.labels.item( index ).getBoundingClientRect().left )+ " " +
+                  ( e.pageY - $navElements.labels.item( index ).getBoundingClientRect().top  );
+            gradient =
+                 "-webkit-gradient(radial, "+pos+", 0, "+pos+", "+$fluentRevealEffect.gradientSize*4+
+                 ", from(rgba(255,255,255,0.3)), to(rgba(255,255,255,0.0))), "+getNavBackground()
+            ;
+            $navElements.labels .item( index ).style.background = gradient;
+            $navElements.symbols.item( index ).style.background = "transparent";
+    
+        }
+    }
+}
 
 
 
