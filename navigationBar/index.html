@@ -1,44 +1,21 @@
 <!DOCTYPE HTML>
 <html>
     <head>
-        <link rel="stylesheet" href="style.css">
         <script src="script.js"></script>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="../loadingAnimation/wholePage/loading.css">
     </head>
     
     <body>
         
-        <div id="loading"> 
-            Lade Hintergrund
-            <div class="progressbar-wrapper">
-                <div class="progressbar">
-                    <div class="side front">
-                        <div class="bar"></div>
-                    </div>
-                    <div class="side back">
-                        <div class="bar"></div>
-                    </div>
-                    <div class="side top">
-                        <div class="bar"></div>
-                    </div>
-                    <div class="side bottom">
-                        <div class="bar"></div>
-                    </div>
-                    <div class="side left"></div>
-                </div>
-           </div> 
-            
-            <script>
-                
-                // @method change the progress of the progressbar
-                // @param  {Number} percentage
-                function setProgress( percentage ){
-                    document.querySelectorAll( "div.progressbar-wrapper > div.progressbar > div.side > div.bar" ).forEach( bar => bar.style.width = percentage+"%" );
-                }
-
-            </script>
-            
-            <script src="load.js">  </script>
-            
+        <div class="loader-fullscreen-wrapper">
+            <div class="loader-fullscreen">
+                <div class="circle"></div>
+                <div class="circle"></div>
+                <div class="circle"></div>
+                <div class="circle"></div>
+                <div class="circle"></div>
+            </div>
         </div>
         
         <div id="navigation" class="hidden">
@@ -361,7 +338,5 @@
         </div>
         
         <div id="background"></div>
-        
-        
     </body>
 </html>

@@ -1,74 +1,6 @@
-:root,html,body{margin:0;overflow:none;}/*remove margin and overflow*/
-
-
-/*==============/ LOADING /===============*/
-
-#loading {
-    
-    position: fixed;
-    top   : 0; 
-    bottom: 0;
-    left  : 0;
-    right : 0;
-    z-index  : 200;
-    
-    padding-top: 30vh;
-    
-    background: #888;
-    
-    color: #fff;
-    text-align: center;
-    
-    cursor: wait;
-        
-}
-
-.progressbar-wrapper {
-    width: 300px;
-    height: 60px;
-    top: 50%;
-    left: 50%;
-    position: absolute;
-    transform: translate(-50%, -50%);
-}
-.progressbar-wrapper .progressbar {
-    width: 100%;
-    height: 100%;
-    transform-style: preserve-3d;
-    transform: rotate3d( .3,.3,0,-10deg );
-}
-.progressbar-wrapper .side {
-    width: 100%;
-    height: 100%;
-    background-color: rgba(254, 254, 254, 0.3);
-    top: 0;
-    left: 0;
-    position: absolute;
-    border: 2px solid #fff6;
-}
-.progressbar-wrapper .bottom {
-    box-shadow: 10px 10px 50px 5px rgba(90, 90, 90, 0.7);
-    transform: rotateX(90deg);
-    transform-origin: bottom;
-}
-.progressbar-wrapper .top {
-    transform: translate(0, -100%) rotateX(90deg);
-    transform-origin: bottom;
-}
-.progressbar-wrapper .back {
-    transform: translateZ(-60px);
-}
-.progressbar-wrapper .left {
-    width: 60px;
-    transform: rotateY(90deg);
-    transform-origin: left;
-    background-color: rgba(225, 0, 120, 0.6);
-}
-.progressbar-wrapper .bar {
-    height:100%;
-    background-color: rgba(225, 0, 120, 0.6);
-    box-shadow: 5px 5px 50px 5px rgba(225, 0, 120, 0.36);
-    width:0;
+body {
+    margin: 0;
+    overflow: none;
 }
 
 /*============/ NAVIGATION /=================*/
@@ -233,8 +165,7 @@
     width: 100%;
     height: 100vh;
     overflow: hidden;
-    /*
-    background:url(bg.jpg);*/
+    background:url(bg.jpg);
     background-size: cover;
     
 }
@@ -244,7 +175,10 @@
     /* width: gets set by js */
     
     background: transparent;
+    
+    /*
     cursor:url(cursor2.cur), auto;
+    */
     
 }
 

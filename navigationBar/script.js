@@ -132,7 +132,7 @@ function update( ){
 
 
 //=========// MAIN //=========//
-window.onload =()=> {
+window.addEventListener('load', () => {
     
     // save link to navigationelements
     $navElements = {
@@ -161,7 +161,9 @@ window.onload =()=> {
     setTimeout( makeBestNavigationBarState,9 );
     window.addEventListener( "resize",resize );
     
-}
+    // Page is ready, hide the loading overlay now.
+    document.querySelector('div.loader-fullscreen-wrapper').style.display = 'none'
+})
 
 
 var $resizingCounter = 0;
