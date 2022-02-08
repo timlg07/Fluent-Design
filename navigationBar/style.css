@@ -249,7 +249,7 @@ button.default {
     user-select: none;
     
     font-family: inherit;
-    font-size: 18px;
+    font-size: 1rem;
     letter-spacing: -1px;
     
 }
@@ -272,7 +272,7 @@ div.title {
     margin-bottom: 40px;
     
     color: #fff;
-    font-size: 18px;
+    font-size: 2rem;
     font-family: sans-serif;
     
 }
