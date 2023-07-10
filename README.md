@@ -1,7 +1,7 @@
-# Fluent-Design
+Fluent-Design
 Microsofts Fluent Design with pure HTML/CSS/JS 
 
-### Elements:
+Elements:
 | Element               | demo | code and readme |
 | --------------------- | ---- | ------ |
 | __Navigation-Bar__    | [git.tim-greller.de/fluent/navigationBar](https://tim-greller.de/git/fluent/navigationBar/) | [./navigationBar](navigationBar) |
